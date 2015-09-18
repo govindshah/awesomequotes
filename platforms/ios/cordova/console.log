@@ -1,0 +1,16 @@
+2015-09-18 09:33:38.712 awesomequotes[2741:179521] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Data/Application/4FA97F7E-E36E-468C-A217-A1E9D4FE7522/Library/Cookies/com.ionicframework.awesomequotes379268.binarycookies
+2015-09-18 09:33:38.918 awesomequotes[2741:179521] Apache Cordova native platform version 3.8.0 is starting.
+2015-09-18 09:33:38.918 awesomequotes[2741:179521] Multi-tasking -> Device: YES, App: YES
+2015-09-18 09:33:38.929 awesomequotes[2741:179521] Unlimited access to network resources
+2015-09-18 09:33:39.215 awesomequotes[2741:179521] [CDVTimer][keyboard] 0.097990ms
+2015-09-18 09:33:39.215 awesomequotes[2741:179521] [CDVTimer][TotalPluginStartup] 0.454009ms
+2015-09-18 09:33:39.600 awesomequotes[2741:179521] Resetting plugins due to page load.
+2015-09-18 09:33:39.948 awesomequotes[2741:179521] Finished load of: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Bundle/Application/2AE7E51F-56E1-41E6-8929-201754C38485/awesomequotes.app/www/index.html#/tab/dash
+2015-09-18 09:50:52.122 awesomequotes[3372:198077] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Data/Application/8C1F8A42-8C15-4CCE-A85E-57F09E5B618B/Library/Cookies/com.ionicframework.awesomequotes379268.binarycookies
+2015-09-18 09:50:52.171 awesomequotes[3372:198077] Apache Cordova native platform version 3.8.0 is starting.
+2015-09-18 09:50:52.171 awesomequotes[3372:198077] Multi-tasking -> Device: YES, App: YES
+2015-09-18 09:50:52.173 awesomequotes[3372:198077] Unlimited access to network resources
+2015-09-18 09:50:52.201 awesomequotes[3372:198077] [CDVTimer][keyboard] 0.152051ms
+2015-09-18 09:50:52.201 awesomequotes[3372:198077] [CDVTimer][TotalPluginStartup] 0.492990ms
+2015-09-18 09:50:52.283 awesomequotes[3372:198077] Resetting plugins due to page load.
+2015-09-18 09:50:52.517 awesomequotes[3372:198077] Finished load of: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Bundle/Application/DC92CF64-D3F7-4372-A24E-B28663352007/awesomequotes.app/www/index.html#/tab/dash
