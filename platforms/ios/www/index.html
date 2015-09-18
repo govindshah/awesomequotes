@@ -25,27 +25,27 @@
     <script>
       alert("test");
       document.addEventListener("deviceready", runme, false);
+      
       function runme() {
         window.plugins.AppleAdvertising.getIDFA(
-                                                function(idfa) {
-                                                console.log("got idfa: " + idfa);
-                                                },
-                                                function() {
-                                                console.log("error loading idfa");
-                                                }
-                                                );
+          function(idfa) {
+            console.log("got idfa: " + idfa);
+          },
+          function() {
+            console.log("error loading idfa");
+          }
+        );
                                                 
-                                                window.plugins.AppleAdvertising.getIdentifiers(
-                                                                                               function(identifiers) {
-                                                                                               console.log("got idfa: " + identifiers.idfa);
-                                                                                               console.log("got idfv: " + identifiers.idfv);
-                                                                                               console.log("got trackingEnabled: " + identifiers.trackingEnabled);
-                                                                                               },
-                                                                                               function() {
-                                                                                               console.log("error loading identifiers");
-                                                                                               }
-                                                                                               );
-                                                                                               
+        window.plugins.AppleAdvertising.getIdentifiers(
+          function(identifiers) {
+            console.log("got idfa: " + identifiers.idfa);
+            console.log("got idfv: " + identifiers.idfv);
+            console.log("got trackingEnabled: " + identifiers.trackingEnabled);
+          },
+          function() {
+            console.log("error loading identifiers");
+          }
+        );
       }
     </script>
 
