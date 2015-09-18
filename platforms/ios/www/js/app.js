@@ -83,3 +83,9 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
+function handleOpenURL(url) {
+  setTimeout(function() {
+             alert("received url: " + url);
+             }, 0);
+}
+alert(2);

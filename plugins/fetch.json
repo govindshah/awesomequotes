@@ -4,5 +4,16 @@
             "type": "local",
             "path": "/Users/govind/.plugman/cache/com.ionic.keyboard/1.0.4/package"
         }
+    },
+    "cordova-plugin-customurlscheme": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/EddyVerbruggen/LaunchMyApp-PhoneGap-Plugin.git",
+            "subdir": "."
+        },
+        "is_top_level": true,
+        "variables": {
+            "URL_SCHEME": "awesomequotes"
+        }
     }
 }

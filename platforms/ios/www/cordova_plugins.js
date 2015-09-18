@@ -20,6 +20,13 @@ module.exports = [
         "merges": [
             "analytics"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-customurlscheme/www/ios/LaunchMyApp.js",
+        "id": "cordova-plugin-customurlscheme.LaunchMyApp",
+        "clobbers": [
+            "window.plugins.launchmyapp"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -27,7 +34,8 @@ module.exports.metadata =
 {
     "com.ionic.keyboard": "1.0.4",
     "com.aquto.cordova.AppleAdvertising": "0.0.1",
-    "com.analytics.google": "1.2.2"
+    "com.analytics.google": "1.2.2",
+    "cordova-plugin-customurlscheme": "4.0.0"
 }
 // BOTTOM OF METADATA
 });

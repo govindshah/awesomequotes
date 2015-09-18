@@ -23,9 +23,9 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script>
-      alert("test 2");
+      alert("test");
       document.addEventListener("deviceready", runme, false);
-      document.addEventListener("deviceready", handleOpenURL, false);
+      
       function runme() {
         window.plugins.AppleAdvertising.getIDFA(
           function(idfa) {
@@ -46,20 +46,11 @@
             console.log("error loading identifiers");
           }
         );
-        
         analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
         function gasuccess(){ alert('success'); }
         function gafail() { alert('fail'); }
-          //alert(handleOpenURL());
-          
       }
-    function handleOpenURL(url) {
-      setTimeout(function() {
-                 alert("received url: " + url);
-                 }, 0);
-    }
     </script>
-
   </head>
   <body ng-app="starter" class="platform-ios platform-cordova platform-webview">
     <!--
