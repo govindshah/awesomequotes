@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"AppleAdvertising\"><param name=\"ios-package\" value=\"AppleAdvertising\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"GAPlugin\"><param name=\"ios-package\" value=\"CDVGoogleAnalytics\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -24,6 +28,30 @@
                     "AdSupport.framework": [
                         {
                             "xml": "true",
+                            "count": 1
+                        }
+                    ],
+                    "SystemConfiguration.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "CoreData.framework": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libz.dylib": [
+                        {
+                            "xml": "false",
+                            "count": 1
+                        }
+                    ],
+                    "libsqlite3.0.dylib": [
+                        {
+                            "xml": "false",
                             "count": 1
                         }
                     ]
@@ -36,6 +64,9 @@
             "PACKAGE_NAME": "com.ionicframework.starter"
         },
         "com.aquto.cordova.AppleAdvertising": {
+            "PACKAGE_NAME": "com.ionicframework.awesomequotes379268"
+        },
+        "com.analytics.google": {
             "PACKAGE_NAME": "com.ionicframework.awesomequotes379268"
         }
     },
