@@ -79,16 +79,35 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
-    .state('tab.quote', {
-      url: '/quote',
-      views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-quote.html',
-          controller: 'QuoteCtrl'
-        }
+  .state('tab.quote', {
+    url: '/quote',
+    views: {
+      'tab-quote': {
+        templateUrl: 'templates/tab-quote.html',
+        controller: 'QuoteCtrl'
       }
-    })
-  ;
+    }
+  })
+
+  .state('tab.categories', {
+    url: '/categories',
+    views: {
+      'tab-categories': {
+        templateUrl: 'templates/tab-categories.html',
+        controller: 'CategoriesCtrl'
+      }
+    }
+  })
+
+  .state('tab.favorite', {
+    url: '/favorite',
+    views: {
+      'tab-favorite': {
+        templateUrl: 'templates/tab-favorite.html',
+        controller: 'FavoriteCtrl'
+      }
+    }
+  });
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/quote');

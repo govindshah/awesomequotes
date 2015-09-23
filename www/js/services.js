@@ -52,7 +52,7 @@ angular.module('starter.services', [])
     // Might use a resource here that returns a JSON array
 
     // Some fake testing data
-    var category = [{
+    var categories = [{
       id: 1,
       name: "Life",
       text: "",
@@ -70,11 +70,11 @@ angular.module('starter.services', [])
       text: "",
       image: '',
       quotes: []
-    }, {
-      id: 4,
-      text: "",
-      image: '',
-      quotes: []
+    //}, {
+    //  id: 4,
+    //  text: "",
+    //  image: '',
+    //  quotes: []
     }, {
       id: 5,
       name: 'Success and Abundance',
@@ -89,7 +89,7 @@ angular.module('starter.services', [])
       quotes: []
     }, {
       id: 7,
-      name: 'Communication &amp; Relationship',
+      name: 'Communication & Relationship',
       text: "",
       image: '',
       quotes: []
@@ -145,15 +145,13 @@ angular.module('starter.services', [])
 
     return {
       all: function() {
-        return chats;
+        return categories;
       },
-      remove: function(chat) {
-        chats.splice(chats.indexOf(chat), 1);
-      },
-      get: function(chatId) {
-        for (var i = 0; i < chats.length; i++) {
-          if (chats[i].id === parseInt(chatId)) {
-            return chats[i];
+
+      get: function(catId) {
+        for (var i = 0; i < categories.length; i++) {
+          if (categories[i].id === parseInt(catId)) {
+            return categories[i];
           }
         }
         return null;
@@ -221,4 +219,23 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}]);
+
+;
