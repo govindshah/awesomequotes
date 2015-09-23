@@ -14,3 +14,18 @@
 2015-09-18 09:50:52.201 awesomequotes[3372:198077] [CDVTimer][TotalPluginStartup] 0.492990ms
 2015-09-18 09:50:52.283 awesomequotes[3372:198077] Resetting plugins due to page load.
 2015-09-18 09:50:52.517 awesomequotes[3372:198077] Finished load of: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Bundle/Application/DC92CF64-D3F7-4372-A24E-B28663352007/awesomequotes.app/www/index.html#/tab/dash
+2015-09-18 18:43:00.807 awesomequotes[13759:606085] DiskCookieStorage changing policy from 2 to 0, cookie file: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Data/Application/14DC5C92-9633-411F-A136-F15A9C300CEC/Library/Cookies/com.ionicframework.awesomequotes379268.binarycookies
+2015-09-18 18:43:00.877 awesomequotes[13759:606085] Apache Cordova native platform version 3.8.0 is starting.
+2015-09-18 18:43:00.877 awesomequotes[13759:606085] Multi-tasking -> Device: YES, App: YES
+2015-09-18 18:43:00.879 awesomequotes[13759:606085] Unlimited access to network resources
+2015-09-18 18:43:00.914 awesomequotes[13759:606085] [CDVTimer][keyboard] 0.069022ms
+2015-09-18 18:43:00.914 awesomequotes[13759:606085] [CDVTimer][TotalPluginStartup] 0.320971ms
+2015-09-18 18:43:01.048 awesomequotes[13759:606085] Resetting plugins due to page load.
+2015-09-18 18:43:05.020 awesomequotes[13759:606085] Finished load of: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Bundle/Application/2BF7E49C-65C2-4590-A51C-2AAF650359D9/awesomequotes.app/www/index.html#/tab/dash
+2015-09-18 19:10:38.657 awesomequotes[15768:627998] Apache Cordova native platform version 3.8.0 is starting.
+2015-09-18 19:10:38.658 awesomequotes[15768:627998] Multi-tasking -> Device: YES, App: YES
+2015-09-18 19:10:38.659 awesomequotes[15768:627998] Unlimited access to network resources
+2015-09-18 19:10:38.687 awesomequotes[15768:627998] [CDVTimer][keyboard] 0.069022ms
+2015-09-18 19:10:38.687 awesomequotes[15768:627998] [CDVTimer][TotalPluginStartup] 0.237048ms
+2015-09-18 19:10:38.760 awesomequotes[15768:627998] Resetting plugins due to page load.
+2015-09-18 19:10:44.620 awesomequotes[15768:627998] Finished load of: file:///Users/govind/Library/Developer/CoreSimulator/Devices/DFA83365-C9C3-4287-87C7-8D3B9650AFED/data/Containers/Bundle/Application/32A5B4D1-A943-4171-8D26-6CBA63C9744B/awesomequotes.app/www/index.html#/tab/dash

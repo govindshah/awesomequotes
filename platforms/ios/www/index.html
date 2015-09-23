@@ -46,10 +46,11 @@
             console.log("error loading identifiers");
           }
         );
-        analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
-        function gasuccess(){ alert('success'); }
-        function gafail() { alert('fail'); }
       }
+    analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
+    function gasuccess(){ alert('success'); }
+    function gafail() { alert('fail'); }
+    alert(handleOpenURL());
     </script>
   </head>
   <body ng-app="starter" class="platform-ios platform-cordova platform-webview">

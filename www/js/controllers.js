@@ -25,4 +25,24 @@ angular.module('starter.controllers', [])
   $scope.settings = {
     enableFriends: true
   };
-});
+})
+.controller('QuoteCtrl', function($scope, $stateParams, Quotes) {
+    var id = $stateParams.quoteId;
+    if(typeof($stateParams.quoteId) == 'undefined' || $stateParams.quoteId == '') {
+      id = Math.floor((Math.random() * 6) + 1);
+    }
+    $scope.quote = Quotes.get(id);
+})
+
+  .controller('CategoriesCtrl', function($scope, Chats) {
+    // With the new view caching in Ionic, Controllers are only called
+    // when they are recreated or on app start, instead of every page change.
+    // To listen for when this page is active (for example, to refresh data),
+    // listen for the $ionicView.enter event:
+    //
+    //$scope.$on('$ionicView.enter', function(e) {
+    //});
+
+    $scope.categories = Categories.all();
+  })
+;

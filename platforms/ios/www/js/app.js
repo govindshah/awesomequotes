@@ -77,10 +77,21 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         controller: 'AccountCtrl'
       }
     }
-  });
+  })
+
+    .state('tab.quote', {
+      url: '/quote',
+      views: {
+        'tab-dash': {
+          templateUrl: 'templates/tab-quote.html',
+          controller: 'QuoteCtrl'
+        }
+      }
+    })
+  ;
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/quote');
 
 });
 function handleOpenURL(url) {
@@ -88,4 +99,10 @@ function handleOpenURL(url) {
              alert("received url: " + url);
              }, 0);
 }
+analytics.trackView('Screen Title')
+analytics.trackEvent('Category', 'Action', 'Label', Value)
+analytics.addTransaction('ID', 'Affiliation', Revenue, Tax, Shipping, 'Currency Code')
+analytics.addTransactionItem('ID', 'Name', 'SKU', 'Category', Price, Quantity, 'Currency Code')
+analytics.setUserId('my-user-id')
+analytics.debugMode()
 alert(2);
