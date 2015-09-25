@@ -57,7 +57,7 @@ angular.module('starter.services', [])
       name: "Life",
       text: "",
       image: '',
-      quotes: [1,2,3]
+      quotes: [1,4,3,5]
     }, {
       id: 2,
       name: 'Purpose',
@@ -217,6 +217,18 @@ angular.module('starter.services', [])
         }
       }
       return null;
+    },
+    getListByIds: function(quoteIds) {
+      var results = new Array();
+      for (var i = 0; i < quotes.length; i++) {
+        var index = quoteIds.indexOf(quotes[i].id);
+        //alert(i + " -- " + quotes[i].id + " --- " + index);
+        if (index > -1) {
+          //alert(quotes[i].id);
+          results.push(quotes[i]);
+        }
+      }
+      return results;
     }
   };
 })
@@ -238,4 +250,3 @@ angular.module('starter.services', [])
   }
 }]);
 
-;
