@@ -63,13 +63,13 @@ angular.module('starter.services', [])
       name: 'Purpose',
       text: "",
       image: '',
-      quotes: []
+      quotes: [1]
     }, {
       id: 3,
       name: 'Spiritual',
       text: "",
       image: '',
-      quotes: []
+      quotes: [2]
     //}, {
     //  id: 4,
     //  text: "",
@@ -80,7 +80,7 @@ angular.module('starter.services', [])
       name: 'Success and Abundance',
       text: "",
       image: '',
-      quotes: []
+      quotes: [3]
     }, {
       id: 6,
       name: "Happiness and Wellbeing",

@@ -27,8 +27,7 @@ angular.module('starter.controllers', [])
   };
 })
 .controller('QuoteCtrl', function($scope, $stateParams, Quotes, $localstorage, Categories) {
-    var quotesArray;
-    var previousQ, nextQ;
+    var quotesArray, previousQ, nextQ;
     alert("STATE ->"+JSON.stringify($stateParams));
 
     var id = $stateParams.quoteId;
@@ -43,7 +42,9 @@ angular.module('starter.controllers', [])
           quotesArray = allCat[i].quotes;
         }
       }
-      alert(quotesArray);
+      if(typeof(id) == 'undefined' || id == '') {
+        id = quotesArray[0];
+      }
     }
 
     if(typeof(favId) != "undefined" && favId != "") {
@@ -51,14 +52,49 @@ angular.module('starter.controllers', [])
       id = favId;
     }
 
-    if(quotesArray != '') {
-
-    }
-
-
     if(typeof(id) == 'undefined' || id == '') {
       id = Math.floor((Math.random() * allQuotes.length) + 1);
     }
+
+    if(typeof(quotesArray) == 'undefined' || quotesArray == '') {
+      for (var i = 0; i < allCat.length; i++) {
+        if (allCat[i].id == catId) {
+          quotesArray = allCat[i].quotes;
+        }
+      }
+    }
+
+
+    if(typeof(quotesArray) != 'undefined' && quotesArray != '') {
+      alert(quotesArray);
+
+      var found = false;
+      for(var i = 0; i < quotesArray.length; i++) {
+        if(id == quotesArray[i]) {
+          found = true;
+          if(i == 0) {
+            previousQ = quotesArray[quotesArray.length - 1];
+            nextQ = quotesArray[i + 1];
+          } else {
+            previousQ = quotesArray[i - 1];
+            nextQ = quotesArray[i + 1];
+          }
+
+          if(i == quotesArray.length) {
+            nextQ = quotesArray[0];
+          }
+
+          if(1 == quotesArray.length) {
+            nextQ = quotesArray[0];
+            previousQ = quotesArray[0];
+          }
+        }
+      }
+    }
+
+    alert("ID: " + id + " --P-->"+ previousQ+ " --N-->"+nextQ);
+
+
     $scope.quote = Quotes.get(id);
 
     $scope.saveFav = function(quoteId) {
