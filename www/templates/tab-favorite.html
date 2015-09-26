@@ -3,7 +3,7 @@
     <ion-list>
       <ion-item class="item-remove-animate item-icon-right" ng-repeat="quote in quotes" type="item-text-wrap" href="#/tab/fav/{{quote.id}}">
         <h2>{{quote.quote}}</h2>
-        <p> - {{quote.author}}</p>
+        <p> - {{quote.author}} -- {{quote.id}}</p>
         <p><a href="#" ng-click="removeFav({{quote.id}})">Remove</a></p>
         <i class="icon ion-chevron-right icon-accessory"></i>
       </ion-item>
