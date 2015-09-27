@@ -239,6 +239,24 @@
           <string>awesomequotes</string>
         </array>
       </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>awesomequotes</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>awesomequotes</string>
+        </array>
+      </dict>
+      <dict>
+        <key>CFBundleURLSchemes</key>
+        <array>
+          <string>awesomequotes</string>
+        </array>
+      </dict>
     </array>
   </dict>
 </plist>

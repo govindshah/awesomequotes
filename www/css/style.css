@@ -86,21 +86,36 @@
   background-size:contain;
 }
 
-.fixed-outside{
-  position: absolute;
-  bottom: 0;
-  color:white;
-  width: 100%;
-  height:  120px;
-  text-align:center;
+.fixed-below {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 52px;
 }
 
-.has-bottom .scroll{
-  padding-bottom:120px !important;
+.scroll-content {
+  position: relative;
 }
 
-.button-circle {
-  width: 50px !important;
-  height: 50px !important;
-  border-radius: 50% !important;
+.item .item-content .item-complex{
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
 }
+
+.item-remove-animate.item-icon-right {
+  border-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
+}
+
+
+
+
+
+
+
+
+
+
+
+

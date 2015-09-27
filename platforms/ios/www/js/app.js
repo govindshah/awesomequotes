@@ -110,13 +110,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
   .state('tab.quoteCatQid', {
-    url: '/cat/:catId/:quotId',
+    url: '/cat/:catId/:quoteId',
     cache: false,
     views: {
       'tab-quote': {
         templateUrl: 'templates/tab-quote.html',
         controller: 'QuoteCtrl',
-        data: {'category': 'yes'}
+        params: ['catId', 'quoteId']
       }
     }
   })

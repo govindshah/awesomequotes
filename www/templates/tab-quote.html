@@ -1,17 +1,30 @@
 <ion-view view-title="" data-ng-init="init()">
-  <ion-content class="padding">
+  <ion-content class="padding" scroll="false">
     <div style="margin-top: 20%">
       <div class="col-100 myQuote">
         {{quote.quote}}
       </div>
       <br /><br />
       <div class="col-100 col-offset-50 author">
-        - {{quote.author}} <br> {{quote.id}}
+        - {{quote.author}} <br> <!-- {{quote.id}}
         <!-- <img ng-src="{{quote.image}}" style="width: 64px; height: 64px"> -->
       </div>
     </div>
-    <img src="../img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
+    <div class="fixed-below">
+      <div class="row">
+        <div class="col">
+          <img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
+        </div>
+        <div class="col">
+          <img src="img/star-brown.jpg" ng-click="saveFav({{quote.id}})"  style="width: 52px; height: 52px;">
+        </div>
+        <div class="col">
+          <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px;" href="#/tab/{{nextQ}}">
+        </div>
+      </div>
+    <!--<img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
     <div class="ion-star" ng-click="saveFav({{quote.id}})"></div>
-    <img src="../img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px;" href="#/tab/{{nextQ}}">
+    <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px;" href="#/tab/{{nextQ}}"> -->
+    </div>
   </ion-content>
 </ion-view>

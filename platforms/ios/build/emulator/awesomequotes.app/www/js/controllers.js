@@ -26,164 +26,180 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 })
-.controller('QuoteCtrl', function($scope, $stateParams, Quotes, $localstorage, Categories) {
-    var quotesArray = new Array();
-    var previousQ, nextQ;
-    alert("STATE ->"+JSON.stringify($stateParams));
+.controller('QuoteCtrl', function($scope, $stateParams, Quotes, $localstorage, Categories, $state) {
+  var quotesArray = new Array();
+  var previousQ, nextQ, tpath = '';
+  //alert("STATE ->"+JSON.stringify($stateParams));
 
-    var id = $stateParams.quoteId;
-    var catId = $stateParams.catId;
-    var favId = $stateParams.favId;
-    var allQuotes = Quotes.all();
+  var id = $stateParams.quoteId;
+  var catId = $stateParams.catId;
+  var favId = $stateParams.favId;
+  var allQuotes = Quotes.all();
 
-    if(typeof(catId) != "undefined" && catId != "") {
-      var allCat = Categories.all();
-      for (var i = 0; i < allCat.length; i++) {
-        if (allCat[i].id == catId) {
-          quotesArray = allCat[i].quotes;
+  if (typeof(catId) != "undefined" && catId != "") {
+     var allCat = Categories.all();
+     for (var i = 0; i < allCat.length; i++) {
+       if (allCat[i].id == catId) {
+         quotesArray = allCat[i].quotes;
+       }
+     }
+     if (typeof(id) == 'undefined' || id == '' || id == 0) {
+       id = quotesArray[0];
+     }
+     tpath = 'cat/' + catId;
+    $scope.catId = catId;
+  }
+
+  if (typeof(favId) != "undefined" && favId != "") {
+    var temp = $localstorage.get('fav');
+    var tempArray = new Array();
+    tempArray = temp.split(',');
+    for (i = 0; i < tempArray.length; i++) {
+      if (typeof tempArray[i] != "undefined" && tempArray[i] != '') {
+        quotesArray.push(tempArray[i]);
+      }
+    }
+    //alert("QuotesArray --->" + quotesArray + " ----- " + tempArray );
+    tpath = 'fav';
+    id = favId;
+    $scope.favId = favId;
+  }
+
+  if (typeof(id) == 'undefined' || id == '' || id == 0) {
+    id = Math.floor((Math.random() * allQuotes.length) + 1);
+  }
+
+  if (typeof(quotesArray) == 'undefined' || quotesArray == '') {
+    quotesArray = new Array();
+    for (var i = 0; i < allQuotes.length; i++) {
+      quotesArray.push(allQuotes[i].id);
+    }
+  }
+
+  if (typeof(quotesArray) != 'undefined' && quotesArray != '') {
+    //alert(quotesArray + " === " + quotesArray.length);
+
+    var found = false;
+    for (var i = 0; i < quotesArray.length; i++) {
+      if (id == quotesArray[i]) {
+        found = true;
+        if (i == 0) {
+          previousQ = quotesArray[quotesArray.length - 1];
+          nextQ = quotesArray[i + 1];
+        } else {
+          previousQ = quotesArray[i - 1];
+          nextQ = quotesArray[i + 1];
+        }
+
+        if (i == quotesArray.length - 1) {
+          nextQ = quotesArray[0];
+        }
+
+        if (1 == quotesArray.length) {
+          nextQ = quotesArray[0];
+          previousQ = quotesArray[0];
         }
       }
-      if(typeof(id) == 'undefined' || id == '') {
-        id = quotesArray[0];
-      }
     }
+  }
 
-    if(typeof(favId) != "undefined" && favId != "") {
-      var temp = $localstorage.get('fav');
+  $scope.prevQ = previousQ; //tpath + '/' +
+  $scope.nextQ = nextQ; //tpath + '/' +
+  //alert("ID: " + id + " --P-->" + $scope.prevQ + " --N-->" + $scope.nextQ);
 
-      for(i = 0; i < temp.length; i++){
-        if(typeof temp[i] != "undefined" && temp[i] != '') {
-          quotesArray.push(temp[i]);
-        }
-      }
-
-      id = favId;
+  $scope.showPrev = function(id) {
+    if (typeof($scope.catId) != "undefined" && $scope.catId != "") {
+      $state.go('tab.quoteCatQid', {catId: $scope.catId, quoteId: id}, {reload: true});
+    } else if (typeof($scope.favId) != "undefined" && $scope.favId != "") {
+      $state.go('tab.quoteFav', {'favId': id}, {reload: true});
+    } else {
+      $state.go('tab.quoteId', {quoteId: id}, {reload: true});
     }
+  }
 
-    if(typeof(id) == 'undefined' || id == '') {
-      id = Math.floor((Math.random() * allQuotes.length) + 1);
+  $scope.showNext = function(id) {
+    if (typeof($scope.catId) != "undefined" && $scope.catId != "") {
+      //alert("in cat");
+      $state.go('tab.quoteCatQid', {catId: $scope.catId, quoteId: id}, {reload: true});
+    } else if (typeof($scope.favId) != "undefined" && $scope.favId != "") {
+      //alert("in fav");
+      $state.go('tab.quoteFav', {'favId': id}, {reload: true});
+    } else {
+      //alert("in else");
+      $state.go('tab.quoteId', {quoteId: id}, {reload: true});
     }
+  }
 
-    if(typeof(quotesArray) == 'undefined' || quotesArray == '') {
-      quotesArray = new Array();
-      for (var i = 0; i < allQuotes.length; i++) {
-        quotesArray.push(allQuotes[i].id);
-      }
-    }
+  $scope.quote = Quotes.get(id);
+  $scope.saveFav = function(quoteId) {
+    //alert("In fav...." + quoteId);
+    var favorites = $localstorage.get('fav');
 
-
-    if(typeof(quotesArray) != 'undefined' && quotesArray != '') {
-      alert(quotesArray + " === " + quotesArray.length);
-
-
-
-
-      var found = false;
-      for(var i = 0; i < quotesArray.length; i++) {
-        if(id == quotesArray[i]) {
-          found = true;
-          if(i == 0) {
-            previousQ = quotesArray[quotesArray.length - 1];
-            nextQ = quotesArray[i + 1];
-          } else {
-            previousQ = quotesArray[i - 1];
-            nextQ = quotesArray[i + 1];
-          }
-
-          if(i == quotesArray.length) {
-            nextQ = quotesArray[0];
-          }
-
-          if(1 == quotesArray.length) {
-            nextQ = quotesArray[0];
-            previousQ = quotesArray[0];
-          }
-        }
-      }
-    }
-
-    alert("ID: " + id + " --P-->"+ previousQ+ " --N-->"+nextQ);
-
-
-    $scope.quote = Quotes.get(id);
-
-    $scope.saveFav = function(quoteId) {
-      //alert("In fav...." + quoteId);
-
-      var favorites = $localstorage.get('fav');
-
-      if (typeof(favorites) == "undefined") {
-        favorites = quoteId;
+    if (typeof(favorites) == "undefined") {
+      favorites = quoteId;
+      $localstorage.set('fav', favorites);
+    } else {
+      var av = favorites.indexOf(parseInt(quoteId));
+      if (av == -1) {
+        favorites = favorites.concat(',' + quoteId);
         $localstorage.set('fav', favorites);
-      } else {
-        var av = favorites.indexOf(quoteId);
-        if (av == -1) {
-          favorites = favorites.concat(',' + quoteId);
-          $localstorage.set('fav', favorites);
-        }
       }
+    }
 
-      $scope.favorites = $localstorage.get('fav');
-      //alert("New Value...." + $scope.favorites);
-    };
+    $scope.favorites = $localstorage.get('fav');
+    //alert("New Value...." + $scope.favorites);
+  };
 })
 
 .controller('CategoriesCtrl', function($scope, Categories) {
   $scope.categories = Categories.all();
 })
 
-  .controller('FavoriteCtrl', function($scope, $localstorage, Quotes, $state) {
+.controller('FavoriteCtrl', function($scope, $localstorage, Quotes, $state) {
 
-    var favorites = $localstorage.get('fav');
+  var favorites = $localstorage.get('fav');
+
+  if (typeof favorites != "undefined") {
     var array = new Array();
     array = favorites.split(",");
-    alert(array);
+    //alert(array);
     $scope.favorites = array;
-    alert($scope.favorites);
+    //alert($scope.favorites);
     if (typeof(array) != "undefined") {
       $scope.quotes = Quotes.getListByIds(array);
     }
-    //$state.go('tab.favorite', $scope, {reload: true});
+  }
 
-    $scope.removeFav = function(quoteId) {
-      alert("In fav...." + quoteId);
+  $scope.removeFav = function(quoteId) {
+    //alert("In fav...." + quoteId);
 
-      var temp = $localstorage.get('fav');
-      var favorites = new Array();
-      if(typeof temp[i] != "undefined" && temp[i] != '') {
-        favorites.push(temp[i]);
+    var temp = $localstorage.get('fav');
+    var favorites = new Array();
+    var tempArray = new Array();
+    tempArray = temp.split(',');
+    for( var i = 0; i < tempArray.length; i++) {
+      if (typeof tempArray[i] != "undefined" && tempArray[i] != '') {
+        favorites.push(tempArray[i]);
       }
+    }
 
-      if (typeof(favorites) != "undefined") {
-        favorites.trim();
-        var array = new Array();
-        array = favorites.split(",");
-        var av = favorites.indexOf(quoteId);
-        alert("Found -->" +av + "  -- Len:" + array.length);
-        if(array.length == 1 && array[0] == quoteId) {
-          alert("Found only one element and that matched....");
-          $localstorage.set('fav', "");
-        }
-
-        if (av > -1) {
-          //alert("ARRAY::"+array);
-          //alert("AV-->"+av);
-          //if(av > 0) av = av/2;
-          array.splice(av, 1);
-          favorites = array.join(',');
-            //alert(favorites);
-          $localstorage.set('fav', favorites);
+    if (typeof(favorites) != "undefined") {
+      var temp = new Array();
+      for (var i = 0; i < favorites.length; i++) {
+        if(parseInt(favorites[i]) != parseInt(quoteId)) {
+          temp.push(favorites[i]);
         }
       }
 
-      $scope.favorites = $localstorage.get('fav');
-      if (typeof($scope.favorites) != "undefined") {
-        $scope.quotes = Quotes.getListByIds($scope.favorites);
-      }
+      $localstorage.set('fav', temp);
+    }
 
-      $state.go('tab.favorite', $scope, {reload: true});
-      //$state.go($state.current, {}, {reload: true});
-      alert("New Value...." + $scope.favorites);
-    };
-  })
-;
+    $scope.favorites = $localstorage.get('fav');
+    if (typeof($scope.favorites) != "undefined") {
+      $scope.quotes = Quotes.getListByIds($scope.favorites);
+    }
+
+    $state.go('tab.favorite', $scope, {reload: true});
+    //$state.go($state.current, {}, {reload: true});
+  };
+});

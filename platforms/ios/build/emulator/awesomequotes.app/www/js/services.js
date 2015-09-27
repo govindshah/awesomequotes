@@ -814,7 +814,7 @@ angular.module('starter.services', [])
     },
     {
       "id":86,
-      "quote":"Welcome every new and difficult problem in life as a new opportunity to wrestle and win � and to gain new experience and new power.",
+      "quote":"Welcome every new and difficult problem in life as a new opportunity to wrestle and win and to gain new experience and new power.",
       "author":"L H. Murlin",
       "category":"Opportunity",
       "image":"",
@@ -1055,7 +1055,7 @@ angular.module('starter.services', [])
     {
       "id":116,
       "quote":"Reach perfection.",
-      "author":"Baltasar Graci�n",
+      "author":"Baltasar Graci'n",
       "category":"Motivation",
       "image":"",
       "extra":""
@@ -1334,7 +1334,7 @@ angular.module('starter.services', [])
     },
     {
       "id":151,
-      "quote":"I do not like the idea of happiness�it is too momentary. I would say that I was always busy and interested in something�interest has more meaning than happiness.",
+      "quote":"I do not like the idea of happiness it is too momentary. I would say that I was always busy and interested in something interest has more meaning than happiness.",
       "author":"Georgia O'Keefe",
       "category":"Happiness",
       "image":"",
@@ -1366,7 +1366,7 @@ angular.module('starter.services', [])
     },
     {
       "id":155,
-      "quote":"Men spend their lives in anticipations,�in determining to be vastly happy at some period when they have time. But the present time has one advantage over every other�it is our own. Past opportunities are gone, future have not come. We may lay in a stock of pleasures, as we would lay in a stock of wine; but if we defer the tasting of them too long, we shall find that both are soured by age.",
+      "quote":"Men spend their lives in anticipations, in determining to be vastly happy at some period when they have time. But the present time has one advantage over every other�it is our own. Past opportunities are gone, future have not come. We may lay in a stock of pleasures, as we would lay in a stock of wine; but if we defer the tasting of them too long, we shall find that both are soured by age.",
       "author":"Charles Caleb Colton",
       "category":"Happiness",
       "image":"",
@@ -3133,19 +3133,17 @@ angular.module('starter.services', [])
       return null;
     },
     getListByIds: function(quoteIds) {
-      alert("Quote ids:" + quoteIds);
+      //alert("Quote ids:" + quoteIds);
       var results = new Array();
       quoteIds = quoteIds.toString();
       var temp = new Array();
       temp = quoteIds.split(",");
-      alert(i + " -- " + " --- " + temp );
 
       for (var i = 0; i < quotes.length; i++) {
-        var index = quoteIds.indexOf(quotes[i].id);
-        //alert(i + " -- " + quotes[i].id + " --- " + index + );
-        if (index > -1) {
-          //alert(quotes[i].id);
-          results.push(quotes[i]);
+        for(var j = 0; j < temp.length; j++) {
+          if(parseInt(quotes[i].id) == parseInt(temp[j])) {
+            results.push(quotes[i]);
+          }
         }
       }
       return results;

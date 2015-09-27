@@ -23,9 +23,8 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script>
-      alert("test");
       document.addEventListener("deviceready", runme, false);
-      
+
       function runme() {
         window.plugins.AppleAdvertising.getIDFA(
           function(idfa) {
@@ -35,7 +34,7 @@
             console.log("error loading idfa");
           }
         );
-                                                
+
         window.plugins.AppleAdvertising.getIdentifiers(
           function(identifiers) {
             console.log("got idfa: " + identifiers.idfa);
@@ -60,6 +59,9 @@
     <ion-nav-bar class="bar-stable">
       <ion-nav-back-button>
       </ion-nav-back-button>
+      <ion-nav-title>
+        <img src="img/iPhone6plus-logo.png" width="50%" height="50%">
+      </ion-nav-title>
     </ion-nav-bar>
     <!--
       The views will be rendered in the <ion-nav-view> directive below
