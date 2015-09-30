@@ -27,7 +27,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     } else {
       console.log("Google Analytics Unavailable");
     }
-                       
     window.plugins.AppleAdvertising.getIdentifiers(
       function(identifiers) {
         console.log("got idfa: " + identifiers.idfa);
@@ -42,6 +41,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     );
   });
 })
+
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
