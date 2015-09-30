@@ -17,40 +17,41 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
+    <script>
+      alert("stop");
+      document.addEventListener("deviceready", runme, false);
 
+//      function runme() {
+//        window.plugins.AppleAdvertising.getIDFA(
+//          function(idfa) {
+//            console.log("got idfa: " + idfa);
+//          },
+//          function() {
+//            console.log("error loading idfa");
+//          }
+//        );
+//
+//        window.plugins.AppleAdvertising.getIdentifiers(
+//          function(identifiers) {
+//            console.log("got idfa: " + identifiers.idfa);
+//            console.log("got idfv: " + identifiers.idfv);
+//            console.log("got trackingEnabled: " + identifiers.trackingEnabled);
+//          },
+//          function() {
+//            console.log("error loading identifiers");
+//          }
+//        );
+//        analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
+//        function gasuccess(){ alert('success'); }
+//        function gafail() { alert('fail'); }
+        //alert(handleOpenURL());
+      }
+    </script>
     <!-- your app's js -->
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
-    <script>
-      document.addEventListener("deviceready", runme, false);
 
-      function runme() {
-        window.plugins.AppleAdvertising.getIDFA(
-          function(idfa) {
-            console.log("got idfa: " + idfa);
-          },
-          function() {
-            console.log("error loading idfa");
-          }
-        );
-
-        window.plugins.AppleAdvertising.getIdentifiers(
-          function(identifiers) {
-            console.log("got idfa: " + identifiers.idfa);
-            console.log("got idfv: " + identifiers.idfv);
-            console.log("got trackingEnabled: " + identifiers.trackingEnabled);
-          },
-          function() {
-            console.log("error loading identifiers");
-          }
-        );
-      }
-    analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
-    function gasuccess(){ alert('success'); }
-    function gafail() { alert('fail'); }
-    alert(handleOpenURL());
-    </script>
   </head>
   <body ng-app="starter">
     <!--

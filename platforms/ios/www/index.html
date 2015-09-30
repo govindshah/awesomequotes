@@ -17,12 +17,8 @@
 
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
-
-    <!-- your app's js -->
-    <script src="js/app.js"></script>
-    <script src="js/controllers.js"></script>
-    <script src="js/services.js"></script>
     <script>
+      alert("stop");
       document.addEventListener("deviceready", runme, false);
 
       function runme() {
@@ -45,12 +41,18 @@
             console.log("error loading identifiers");
           }
         );
+//        analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
+//        function gasuccess(){ alert('success'); }
+//        function gafail() { alert('fail'); }
+        //alert(handleOpenURL());
       }
-    analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
-    function gasuccess(){ alert('success'); }
-    function gafail() { alert('fail'); }
-    alert(handleOpenURL());
+      //alert(handleOpenURL());
     </script>
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+
   </head>
   <body ng-app="starter" class="platform-ios platform-cordova platform-webview">
     <!--

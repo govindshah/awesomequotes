@@ -20,9 +20,28 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
+    if(typeof analytics !== undefined) {
+      analytics.startTrackerWithId("UA-67821823-1");
+      analytics.setUserId("");
+      console.log("Google Analytics triggered...");
+    } else {
+      console.log("Google Analytics Unavailable");
+    }
+                       
+    window.plugins.AppleAdvertising.getIdentifiers(
+      function(identifiers) {
+        console.log("got idfa: " + identifiers.idfa);
+        console.log("got idfv: " + identifiers.idfv);
+        console.log("got trackingEnabled: " + identifiers.trackingEnabled);
+        analytics.setUserId(identifiers.idfa);
+        console.log("Google Analytics user id set...");
+      },
+      function() {
+        console.log("error loading identifiers");
+      }
+    );
   });
 })
-
 .config(function($stateProvider, $urlRouterProvider) {
 
   // Ionic uses AngularUI Router which uses the concept of states
@@ -163,10 +182,10 @@ function handleOpenURL(url) {
              alert("received url: " + url);
              }, 0);
 }
-analytics.trackView('Screen Title')
-analytics.trackEvent('Category', 'Action', 'Label', Value)
-analytics.addTransaction('ID', 'Affiliation', Revenue, Tax, Shipping, 'Currency Code')
-analytics.addTransactionItem('ID', 'Name', 'SKU', 'Category', Price, Quantity, 'Currency Code')
-analytics.setUserId('my-user-id')
-analytics.debugMode()
-alert(2);
+//analytics.trackView('Screen Title')
+//analytics.trackEvent('Category', 'Action', 'Label', Value)
+//analytics.addTransaction('ID', 'Affiliation', Revenue, Tax, Shipping, 'Currency Code')
+//analytics.addTransactionItem('ID', 'Name', 'SKU', 'Category', Price, Quantity, 'Currency Code')
+//analytics.setUserId('my-user-id')
+//analytics.debugMode()
+//alert(2);
