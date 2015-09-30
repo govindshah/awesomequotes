@@ -20,7 +20,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
-    if(typeof analytics !== undefined) {
+    if(typeof analytics !== "undefined") {
       analytics.startTrackerWithId("UA-67821823-1");
       analytics.setUserId("");
       console.log("Google Analytics triggered...");
@@ -179,6 +179,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 });
 function handleOpenURL(url) {
   setTimeout(function() {
+    GAAnalytics.trackCampaign(url);
              alert("received url: " + url);
              }, 0);
 }

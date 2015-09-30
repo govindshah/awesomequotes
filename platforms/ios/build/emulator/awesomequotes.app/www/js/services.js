@@ -3166,5 +3166,24 @@ angular.module('starter.services', [])
       return JSON.parse($window.localStorage[key] || '{}');
     }
   }
-}]);
+}])
 
+.service('GAAnalytics', function($location) {
+  return {
+    trackView : function (page) {
+      if(typeof analytics !== "undefined") {
+        console.log(" analytics triggered for track view...");
+        page = page ? page : $location.path();
+        analytics.trackView(page);
+      }
+      return true;
+    },
+    trackEvent : function (category, action, label, value) {
+      if(typeof analytics !== "undefined") {
+        console.log(" analytics triggered for track event...");
+        analytics.trackEvent(category, action, label, value);
+      }
+      return true;
+    }
+  }
+});

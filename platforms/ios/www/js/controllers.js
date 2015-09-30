@@ -83,67 +83,68 @@ angular.module('starter.controllers', [])
     }
   }
 
-  if (typeof(quotesArray) != 'undefined' && quotesArray != '') {
-    //alert(quotesArray + " === " + quotesArray.length);
+  $scope.quotesArray = quotesArray;
+  getButtonIds(id);
 
-    var found = false;
-    for (var i = 0; i < quotesArray.length; i++) {
-      if (id == quotesArray[i]) {
-        found = true;
-        if (i == 0) {
-          previousQ = quotesArray[quotesArray.length - 1];
-          nextQ = quotesArray[i + 1];
-        } else {
-          previousQ = quotesArray[i - 1];
-          nextQ = quotesArray[i + 1];
-        }
+  function getButtonIds (id) {
+    var previousQ, nextQ;
+      if (typeof($scope.quotesArray) != 'undefined' && $scope.quotesArray != '') {
+      //alert(quotesArray + " === " + quotesArray.length);
 
-        if (i == quotesArray.length - 1) {
-          nextQ = quotesArray[0];
-        }
+      var found = false;
+      for (var i = 0; i < $scope.quotesArray.length; i++) {
+        if (id == $scope.quotesArray[i]) {
+          found = true;
+          if (i == 0) {
+            previousQ = $scope.quotesArray[quotesArray.length - 1];
+            nextQ = $scope.quotesArray[i + 1];
+          } else {
+            previousQ = $scope.quotesArray[i - 1];
+            nextQ = $scope.quotesArray[i + 1];
+          }
 
-        if (1 == quotesArray.length) {
-          nextQ = quotesArray[0];
-          previousQ = quotesArray[0];
+          if (i == $scope.quotesArray.length - 1) {
+            nextQ = $scope.quotesArray[0];
+          }
+
+          if (1 == $scope.quotesArray.length) {
+            nextQ = $scope.quotesArray[0];
+            previousQ = $scope.quotesArray[0];
+          }
         }
       }
     }
+
+    $scope.prevQ = previousQ;
+    $scope.nextQ = nextQ;
+    return previousQ + "|" + nextQ;
   }
 
-  $scope.prevQ = previousQ; //tpath + '/' +
-  $scope.nextQ = nextQ; //tpath + '/' +
   //alert("ID: " + id + " --P-->" + $scope.prevQ + " --N-->" + $scope.nextQ);
+  $scope.quote = Quotes.get(id);
+  $scope.quoteId = id;
+
 
   $scope.showPrev = function(id) {
+    id = $scope.prevQ;
+    $scope.quoteId = id;
     GAAnalytics.trackEvent('Quotes', 'showPrevious', 'id', id);
-
-    if (typeof($scope.catId) != "undefined" && $scope.catId != "") {
-      $state.go('tab.quoteCatQid', {catId: $scope.catId, quoteId: id}, {reload: true});
-    } else if (typeof($scope.favId) != "undefined" && $scope.favId != "") {
-      $state.go('tab.quoteFav', {'favId': id}, {reload: true});
-    } else {
-      $state.go('tab.quoteId', {quoteId: id}, {reload: true});
-    }
+    $scope.quote = Quotes.get(id);
+    var result = getButtonIds(id);
   }
 
   $scope.showNext = function(id) {
+    id = $scope.nextQ;
+    $scope.quoteId = id;
     GAAnalytics.trackEvent('Quotes', 'showNext', 'id', id);
-
-    if (typeof($scope.catId) != "undefined" && $scope.catId != "") {
-      //alert("in cat");
-      $state.go('tab.quoteCatQid', {catId: $scope.catId, quoteId: id}, {reload: true});
-    } else if (typeof($scope.favId) != "undefined" && $scope.favId != "") {
-      //alert("in fav");
-      $state.go('tab.quoteFav', {'favId': id}, {reload: true});
-    } else {
-      //alert("in else");
-      $state.go('tab.quoteId', {quoteId: id}, {reload: true});
-    }
+    $scope.quote = Quotes.get(id);
+    var result = getButtonIds(id);
   }
 
-  $scope.quote = Quotes.get(id);
+
   $scope.saveFav = function(quoteId) {
     //alert("In fav...." + quoteId);
+    quoteId = $scope.quoteId;
     GAAnalytics.trackEvent('Quotes', 'saveFavorite', 'id', id);
 
     var favorites = $localstorage.get('fav');
@@ -164,14 +165,14 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('CategoriesCtrl', function($scope, Categories) {
+.controller('CategoriesCtrl', function($scope, Categories, GAAnalytics) {
     GAAnalytics.trackView('Categories');
 
   $scope.categories = Categories.all();
 })
 
-.controller('FavoriteCtrl', function($scope, $localstorage, Quotes, $state) {
-    GAAnalytics.trackView('Favorites');
+.controller('FavoriteCtrl', function($scope, $localstorage, Quotes, $state, GAAnalytics) {
+  GAAnalytics.trackView('Favorites');
 
   var favorites = $localstorage.get('fav');
 

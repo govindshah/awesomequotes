@@ -3184,6 +3184,20 @@ angular.module('starter.services', [])
         analytics.trackEvent(category, action, label, value);
       }
       return true;
+    },
+    trackCampaign: function(url) {
+      if(typeof analytics !== "undefined") {
+        console.log(" analytics triggered for campaign url...");
+        analytics.setCampaignFromUrl(url);
+      }
+      return true;
+    },
+    trackSocial: function(network, action, target, options) {
+      if(typeof analytics !== "undefined") {
+        console.log(" analytics triggered for social event...");
+        analytics.trackSocial(network, action, target, options);
+      }
+      return true;
     }
   }
 });
