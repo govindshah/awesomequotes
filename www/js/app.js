@@ -179,9 +179,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 });
 function handleOpenURL(url) {
   setTimeout(function() {
-    GAAnalytics.trackCampaign(url);
-             alert("received url: " + url);
-             }, 0);
+    alert("received url: " + url);
+    if(typeof analytics !== "undefined") {
+      analytics.setCampaignFromUrl(url);
+    }
+    alert("received url: " + url);
+  }, 0);
 }
 //analytics.trackView('Screen Title')
 //analytics.trackEvent('Category', 'Action', 'Label', Value)
