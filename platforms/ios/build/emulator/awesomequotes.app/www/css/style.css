@@ -31,7 +31,19 @@
   url("../lib/ionic/fonts/missionpossible.ttf") format('truetype');
 }
 body
-{ font-family: ‘missionpossible’, Arial, serif; font-weight: 400; }
+{ font-family: 'missionpossible', Arial, serif; font-weight: 400; }
+
+.bigText
+{
+  font: 400 40px/0.8 'missionpossible', Arial, serif;;
+  color: #000;
+}
+
+.mediumCustomText
+{
+  font: 10px/0.8 'missionpossible', Arial, serif;;
+  color: #000;
+}
 
 .myQuote {
   font: 400 40px/0.8 'missionpossible', Arial, serif;;
@@ -129,17 +141,19 @@ body
 }
 
 .item .item-content .item-complex{
-  border-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
   color: white;
 }
 
 .item-remove-animate.item-icon-right {
-  border-color: rgba(0, 0, 0, 0);
-  background-color: rgba(0, 0, 0, 0);
+  border-color: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
 }
 
-
+.item .item-content {
+  background-color: transparent !important;
+}
 
 
 
