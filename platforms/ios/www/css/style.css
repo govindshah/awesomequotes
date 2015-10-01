@@ -48,7 +48,14 @@ body
 }
 
 .pane {
-  background: url("../img/iphone6plus-backdrop.png") no-repeat center center fixed;
+  background: url("../img/iPhone6plus-backdrop.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.quotesView {
+  background: url("../img/iPhone6plus-backdrop.png") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;

@@ -19,6 +19,10 @@
                         {
                             "xml": "<feature name=\"GAPlugin\"><param name=\"ios-package\" value=\"CDVGoogleAnalytics\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"SocialSharing\"><param name=\"ios-package\" value=\"SocialSharing\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -54,6 +58,18 @@
                             "xml": "false",
                             "count": 1
                         }
+                    ],
+                    "Social.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
+                    ],
+                    "MessageUI.framework": [
+                        {
+                            "xml": true,
+                            "count": 1
+                        }
                     ]
                 }
             },
@@ -81,6 +97,9 @@
         },
         "cordova-plugin-customurlscheme": {
             "URL_SCHEME": "awesomequotes",
+            "PACKAGE_NAME": "com.ionicframework.awesomequotes379268"
+        },
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.ionicframework.awesomequotes379268"
         }
     },

@@ -15,5 +15,13 @@
         "variables": {
             "URL_SCHEME": "awesomequotes"
         }
+    },
+    "cordova-plugin-x-socialsharing": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-x-socialsharing"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

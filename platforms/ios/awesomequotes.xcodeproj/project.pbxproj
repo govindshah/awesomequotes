@@ -49,6 +49,9 @@
 		D758CC7949964848A22DD544 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = EE6EC4CB0BC64CCB8D4182B6 /* libz.dylib */; };
 		EE9D97A969044EAB9AD0CEF4 /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 261A688523854B42972BB988 /* UIWebViewExtension.m */; };
 		F3644922ADF542ABB25F4BDF /* CDVGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA25C651A79403380616307 /* CDVGoogleAnalytics.m */; };
+		C497256F51164F318C4CC4B1 /* SocialSharing.m in Sources */ = {isa = PBXBuildFile; fileRef = B794893B08464F4CA5D7CE87 /* SocialSharing.m */; };
+		F89BADC0E99F4EE281CD0605 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A772A5AE914CE1910CE812 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		E03FB78CEA91439695607D50 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CA0372C32F34A118356790F /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +139,10 @@
 		F6560D7B352D47FDA2507019 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = com.analytics.google/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = awesomequotes/config.xml; sourceTree = "<group>"; };
 		F94C9BC7AEF54CED974CE75B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = com.analytics.google/GAI.h; sourceTree = "<group>"; };
+		B794893B08464F4CA5D7CE87 /* SocialSharing.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "SocialSharing.m"; path = "cordova-plugin-x-socialsharing/SocialSharing.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		B15C196DEBCE4A2D9512839F /* SocialSharing.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "SocialSharing.h"; path = "cordova-plugin-x-socialsharing/SocialSharing.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		D0A772A5AE914CE1910CE812 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "Social.framework"; path = "System/Library/Frameworks/Social.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		2CA0372C32F34A118356790F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "MessageUI.framework"; path = "System/Library/Frameworks/MessageUI.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +160,8 @@
 				015D291580B6454EAA36FC07 /* CoreData.framework in Frameworks */,
 				D758CC7949964848A22DD544 /* libz.dylib in Frameworks */,
 				6F8ACDD746D64621A6FAF094 /* libsqlite3.0.dylib in Frameworks */,
+				F89BADC0E99F4EE281CD0605 /* Social.framework in Frameworks */,
+				E03FB78CEA91439695607D50 /* MessageUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,6 +240,8 @@
 				4E21C9A26E7B4FAEB21AD565 /* CoreData.framework */,
 				EE6EC4CB0BC64CCB8D4182B6 /* libz.dylib */,
 				BB08CAA8FB1E419B8E552BE6 /* libsqlite3.0.dylib */,
+				D0A772A5AE914CE1910CE812 /* Social.framework */,
+				2CA0372C32F34A118356790F /* MessageUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -264,6 +275,8 @@
 				B79B7BFBC0034AE4BB6647B3 /* GAILogger.h */,
 				6AA3436621D54410B14174E0 /* GAITrackedViewController.h */,
 				F526C257C0734DD3AC751318 /* GAITracker.h */,
+				B794893B08464F4CA5D7CE87 /* SocialSharing.m */,
+				B15C196DEBCE4A2D9512839F /* SocialSharing.h */,
 			);
 			name = Plugins;
 			path = awesomequotes/Plugins;
@@ -452,6 +465,7 @@
 				EE9D97A969044EAB9AD0CEF4 /* UIWebViewExtension.m in Sources */,
 				47C0807FDF6147B59D0BC76E /* AppleAdvertising.m in Sources */,
 				F3644922ADF542ABB25F4BDF /* CDVGoogleAnalytics.m in Sources */,
+				C497256F51164F318C4CC4B1 /* SocialSharing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
