@@ -58,45 +58,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   })
 
   // Each tab has its own nav history stack:
-
-  .state('tab.dash', {
-    url: '/dash',
-    views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
-      }
-    }
-  })
-
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
-    views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
-      }
-    }
-  })
   .state('tab.quote', {
     url: '/quote',
     views: {
@@ -186,10 +147,4 @@ function handleOpenURL(url) {
     alert("received url: " + url);
   }, 0);
 }
-//analytics.trackView('Screen Title')
-//analytics.trackEvent('Category', 'Action', 'Label', Value)
-//analytics.addTransaction('ID', 'Affiliation', Revenue, Tax, Shipping, 'Currency Code')
-//analytics.addTransactionItem('ID', 'Name', 'SKU', 'Category', Price, Quantity, 'Currency Code')
-//analytics.setUserId('my-user-id')
-//analytics.debugMode()
-//alert(2);
+

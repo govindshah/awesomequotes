@@ -1,53 +1,4 @@
 angular.module('starter.services', [])
-
-.factory('Chats', function() {
-  // Might use a resource here that returns a JSON array
-
-  // Some fake testing data
-  var chats = [{
-    id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
-  }, {
-    id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  }, {
-    id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
-  }];
-
-  return {
-    all: function() {
-      return chats;
-    },
-    remove: function(chat) {
-      chats.splice(chats.indexOf(chat), 1);
-    },
-    get: function(chatId) {
-      for (var i = 0; i < chats.length; i++) {
-        if (chats[i].id === parseInt(chatId)) {
-          return chats[i];
-        }
-      }
-      return null;
-    }
-  };
-})
 .factory('Categories', function() {
     // Might use a resource here that returns a JSON array
 
@@ -199,7 +150,7 @@ angular.module('starter.services', [])
     {
       "id":9,
       "quote":"I avoid looking forward or backward, and try to keep looking upward.",
-      "author":"Charlotte Bront�",
+      "author":"Charlotte Bront",
       "category":"Inspiration",
       "image":"",
       "extra":""
@@ -574,7 +525,7 @@ angular.module('starter.services', [])
     },
     {
       "id":56,
-      "quote":"A stray, unthought-of five minutes may contain the event of a life, and this all-important moment � who can tell when it will be upon us?",
+      "quote":"A stray, unthought-of five minutes may contain the event of a life, and this all-important moment - who can tell when it will be upon us?",
       "author":"Dean Alford",
       "category":"Opportunity",
       "image":"",
@@ -1366,7 +1317,7 @@ angular.module('starter.services', [])
     },
     {
       "id":155,
-      "quote":"Men spend their lives in anticipations, in determining to be vastly happy at some period when they have time. But the present time has one advantage over every other�it is our own. Past opportunities are gone, future have not come. We may lay in a stock of pleasures, as we would lay in a stock of wine; but if we defer the tasting of them too long, we shall find that both are soured by age.",
+      "quote":"Men spend their lives in anticipations, in determining to be vastly happy at some period when they have time. But the present time has one advantage over every other - it is our own. Past opportunities are gone, future have not come. We may lay in a stock of pleasures, as we would lay in a stock of wine; but if we defer the tasting of them too long, we shall find that both are soured by age.",
       "author":"Charles Caleb Colton",
       "category":"Happiness",
       "image":"",
@@ -1430,7 +1381,7 @@ angular.module('starter.services', [])
     },
     {
       "id":163,
-      "quote":"The happiness of life is made up of minute fractions�the little soon-forgotten charities of a kiss, a smile, a kind look, a heartfelt compliment in the disguise of a playful raillery, and the countless other infinitesimal of pleasurable thought and genial feeling. ",
+      "quote":"The happiness of life is made up of minute fractions the little soon-forgotten charities of a kiss, a smile, a kind look, a heartfelt compliment in the disguise of a playful raillery, and the countless other infinitesimal of pleasurable thought and genial feeling. ",
       "author":"Samuel Taylor Coleridge",
       "category":"Happiness",
       "image":"",
@@ -1510,7 +1461,7 @@ angular.module('starter.services', [])
     },
     {
       "id":173,
-      "quote":"Try to be happy in this present moment, and put not off being so to a time to come,�as though that time should be of another make from this which has already come and is ours.",
+      "quote":"Try to be happy in this present moment, and put not off being so to a time to come, as though that time should be of another make from this which has already come and is ours.",
       "author":"Thomas Fuller",
       "category":"Happiness",
       "image":"",
@@ -1790,7 +1741,7 @@ angular.module('starter.services', [])
     },
     {
       "id":208,
-      "quote":"To reach a port, we must sail�Sail, not tie at anchor�Sail, not drift.",
+      "quote":"To reach a port, we must sail - Sail, not tie at anchor - Sail, not drift.",
       "author":"Franklin Roosevelt",
       "category":"Ambition",
       "image":"",
@@ -2670,7 +2621,7 @@ angular.module('starter.services', [])
     },
     {
       "id":318,
-      "quote":"Life isn�t a matter of milestones, but of moments.",
+      "quote":"Life isn't a matter of milestones, but of moments.",
       "author":"Rose Kennedy",
       "category":"Life",
       "image":"",
