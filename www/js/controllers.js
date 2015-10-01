@@ -26,7 +26,7 @@ angular.module('starter.controllers', [])
     enableFriends: true
   };
 })
-.controller('QuoteCtrl', function($scope, $stateParams, Quotes, $localstorage, Categories, $state, GAAnalytics) {
+.controller('QuoteCtrl', function($scope, $stateParams, Quotes, $localstorage, Categories, $state, GAAnalytics, $ionicPopup) {
   GAAnalytics.trackView('Quotes');
 
   var quotesArray = new Array();
@@ -161,8 +161,108 @@ angular.module('starter.controllers', [])
     }
 
     $scope.favorites = $localstorage.get('fav');
+    $ionicPopup.alert({
+      title: 'Message',
+      template: 'Saved to Favorites'
+    });
     //alert("New Value...." + $scope.favorites);
   };
+
+  $scope.postFacebook = function() {
+    if(typeof window.plugins.socialsharing !== "undefined") {
+      //<button onclick="window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})">msg via Facebook (with errcallback)</button>
+      window.plugins.socialsharing.shareViaFacebook($scope.quote.quote, null , null , function() {
+          console.log('share ok')
+        },
+        function(errormsg){
+          $ionicPopup.alert({
+            title: 'Error',
+            template: errormsg
+          });
+        }
+      );
+      console.log("facebook opened...");
+    }
+  }
+
+  $scope.postTwitter = function() {
+    if(typeof window.plugins.socialsharing !== "undefined") {
+      //window.plugins.socialsharing.shareViaTwitter('{{quote.quote}}', null , '');
+      window.plugins.socialsharing.shareViaTwitter($scope.quote.quote, null , null , function() {
+          console.log('share ok')
+        },
+        function(errormsg){
+          $ionicPopup.alert({
+            title: 'Error',
+            template: errormsg
+          });
+        }
+      );
+      console.log("twitter opened...");
+    }
+  }
+
+  $scope.postEmail = function() {
+    if(typeof window.plugins.socialsharing !== "undefined") {
+      /*window.plugins.socialsharing.shareViaEmail(
+       'Message', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+       'Subject',
+       ['to@person1.com', 'to@person2.com'], // TO: must be null or an array
+       ['cc@person1.com'], // CC: must be null or an array
+       null, // BCC: must be null or an array
+       ['https://www.google.nl/images/srpr/logo4w.png','www/localimage.png'], // FILES: can be null, a string, or an array
+       onSuccess, // called when sharing worked, but also when the user cancelled sharing via email (I've found no way to detect the difference)
+       onError // called when sh*t hits the fan
+       ); */
+      window.plugins.socialsharing.shareViaEmail(
+        $scope.quote.quote, 'Wrdyup Quote' , null , null, null, null, function() {
+          console.log('share ok')
+        },
+        function(errormsg){
+          console.log(errormsg);
+        }
+      );
+      console.log("email opened...");
+    }
+  }
+
+  $scope.postText = function() {
+    if(typeof window.plugins.socialsharing !== "undefined") {
+      //<button onclick="window.plugins.socialsharing.shareViaSMS({'message':'My cool message', 'subject':'The subject', 'image':'https://www.google.nl/images/srpr/logo4w.png'}, '0612345678,0687654321', function(msg) {console.log('ok: ' + msg)}, function(msg) {alert('error: ' + msg)})">share via SMS</button>
+      window.plugins.socialsharing.shareViaSMS({'message': $scope.quote.quote}, null , function() {
+          console.log('share ok')
+        },
+        function(errormsg){
+          console.log(errormsg);
+        }
+      );
+      console.log("text opened...");
+    }
+  }
+
+  $scope.openShare = function() {
+    if(typeof window.plugins.socialsharing !== "undefined") {
+      window.plugins.socialsharing.share($scope.quote.quote, null , null , '', function() {
+          console.log('share ok');
+        },
+        function(errormsg){
+          console.log(errormsg);
+        }
+      );
+      console.log("share opened...");
+    }
+  }
+
+  $scope.socialSuccess = function(channel) {
+    console.log('Post success on ' + channel);
+  }
+
+  $scope.socialError = function(errormsg) {
+    $ionicPopup.alert({
+      title: 'Error',
+      template: errormsg
+    });
+  }
 })
 
 .controller('CategoriesCtrl', function($scope, Categories, GAAnalytics) {

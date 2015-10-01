@@ -17,16 +17,18 @@
             <img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
           </div>
           <div class="col">
-            <img src="img/star-brown.jpg" ng-click="saveFav({{quote.id}})"  style="width: 52px; height: 52px;">
+            <img src="img/star-brown.jpg" ng-click="saveFav({{quote.id}})"  style="width: 26px; height: 26px;">
+            <img src="img/facebook.png" ng-click="postFacebook()" style="width: 26px; height: 26px;">
+            <img src="img/twitter.png" ng-click="postTwitter()"  style="width: 26px; height: 26px;">
+            <img src="img/mail.png" ng-click="postEmail()"  style="width: 26px; height: 26px;">
+            <img src="img/message.png" ng-click="postText()"  style="width: 26px; height: 26px;">
+            <img src="img/share.png" ng-click="openShare()"  style="width: 26px; height: 26px;">
           </div>
           <div class="col">
-            <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px;" href="#/tab/{{nextQ}}">
+           <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px; position: absolute; right: 0px;" href="#/tab/{{nextQ}}">
           </div>
         </div>
-      <!--<img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
-      <div class="ion-star" ng-click="saveFav({{quote.id}})"></div>
-      <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px;" href="#/tab/{{nextQ}}"> -->
       </div>
-    </div>
-  </ion-content>
+   </div>
+ </ion-content>
 </ion-view>
