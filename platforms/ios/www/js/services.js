@@ -269,8 +269,8 @@ angular.module('starter.services', [])
     },
     {
       "id":24,
-      "quote":"                       ",
-      "author":"John Gardner",
+      "quote":"What you do today can improve all your tomorrows.",
+      "author":"Ralph Marston",
       "category":"Inspiration",
       "image":"",
       "extra":""
