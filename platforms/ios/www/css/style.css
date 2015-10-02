@@ -76,10 +76,12 @@ body
 
 .nav-bar-block, .bar {
   background: url("../img/iPhone6plus-navbar.png") !important;
+  height: 60px;
 }
 
 .tabs {
   background: url("../img/iPhone6plus-navbar.png") !important;
+  height: 70px;
 }
 
 .tabs .tab-item .icon.quote-on {
@@ -160,7 +162,10 @@ body
   font-size: 27px !important;
 }
 
-
+.title {
+  width: 360px !important;
+  height: 60px !important;
+}
 
 
 

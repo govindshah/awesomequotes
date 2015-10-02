@@ -494,7 +494,7 @@
 					"-weak-lSystem",
 					"-ObjC",
 				);
-				PRODUCT_NAME = awesomequotes;
+				PRODUCT_NAME = "awesomequotes";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -527,7 +527,7 @@
 					"-weak-lSystem",
 					"-ObjC",
 				);
-				PRODUCT_NAME = awesomequotes;
+				PRODUCT_NAME = "awesomequotes";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

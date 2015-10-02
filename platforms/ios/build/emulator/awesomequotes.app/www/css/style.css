@@ -50,6 +50,7 @@ body
   color: #000;
   text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
   text-align: center;
+  line-height: 35px;
 }
 
 .author {
@@ -75,10 +76,12 @@ body
 
 .nav-bar-block, .bar {
   background: url("../img/iPhone6plus-navbar.png") !important;
+  height: 60px;
 }
 
 .tabs {
   background: url("../img/iPhone6plus-navbar.png") !important;
+  height: 70px;
 }
 
 .tabs .tab-item .icon.quote-on {
@@ -155,9 +158,14 @@ body
   background-color: transparent !important;
 }
 
+.item h2 {
+  font-size: 27px !important;
+}
 
-
-
+.title {
+  width: 360px !important;
+  height: 60px !important;
+}
 
 
 

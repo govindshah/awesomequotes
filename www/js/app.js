@@ -7,7 +7,7 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, backendService) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -34,9 +34,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         console.log("got trackingEnabled: " + identifiers.trackingEnabled);
         analytics.setUserId(identifiers.idfa);
         console.log("Google Analytics user id set...");
+        backendService.setUsers(identifiers.idfa, identifiers.idfv);
       },
       function() {
         console.log("error loading identifiers");
+        backendService.setUsers("error", "error");
       }
     );
   });
@@ -139,12 +141,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 });
 function handleOpenURL(url) {
+  var body = document.getElementsByTagName("body")[0];
+  var appLaunchedController = angular.element(body).scope();
   setTimeout(function() {
-    alert("received url: " + url);
+    //alert("received url: " + url);
+             appLaunchedController.reportAppLaunched(url);
     if(typeof analytics !== "undefined") {
       analytics.setCampaignFromUrl(url);
     }
-    alert("received url: " + url);
+    //alert("received url: " + url);
   }, 0);
 }
 
