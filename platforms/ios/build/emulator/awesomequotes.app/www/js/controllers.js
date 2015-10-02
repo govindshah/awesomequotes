@@ -293,4 +293,11 @@ angular.module('starter.controllers', [])
     $state.go('tab.favorite', $scope, {reload: true});
     //$state.go($state.current, {}, {reload: true});
   };
-});
+})
+.controller('AppLaunchedController', function($scope, backendService) {
+  $scope.reportAppLaunched = function(url) {
+    console.log('The app launched with URL : ' + url);
+    backendService.setCampaigns(url);
+  }
+})
+;

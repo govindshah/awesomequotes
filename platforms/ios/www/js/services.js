@@ -3153,20 +3153,21 @@ angular.module('starter.services', [])
   }
 })
 
-.factory('backendService', function($http) {
-  return {
-    setUsers: function(idfa, idfv){
+  .factory('backendService', function($http) {
+
+    return {
+      setUsers: function(idfa, idfv){
       return $http.get("http://moven.dev/api/v2/setusers/idfa?idfa="+idfa+"&idfv="+idfv).then(function(response){
-        console.log(response);
-        return true;
-      });
-    },
-    setCampaigns: function(url){
+          console.log(response);
+          return true;
+        });
+      },
+      setCampaigns: function(url){
       return $http.get("http://moven.dev/api/v2/seturl/url?url="+url).then(function(response){
-        console.log(response);
-        return true;
-      });
+          console.log(response);
+          return true;
+        });
+      }
     }
-  }
-})
+  })
 ;
