@@ -262,7 +262,7 @@ angular.module('starter.controllers', [])
 
   $scope.removeFav = function(quoteId) {
     //alert("In fav...." + quoteId);
-    GAAnalytics.trackEvent('Quotes', 'removeFavorite', 'id', id);
+    GAAnalytics.trackEvent('Quotes', 'removeFavorite', 'id', quoteId);
 
     var temp = $localstorage.get('fav');
     var favorites = new Array();

@@ -262,7 +262,7 @@ angular.module('starter.controllers', [])
 
   $scope.removeFav = function(quoteId) {
     //alert("In fav...." + quoteId);
-    GAAnalytics.trackEvent('Quotes', 'removeFavorite', 'id', id);
+    GAAnalytics.trackEvent('Quotes', 'removeFavorite', 'id', quoteId);
 
     var temp = $localstorage.get('fav');
     var favorites = new Array();
@@ -285,10 +285,10 @@ angular.module('starter.controllers', [])
       $localstorage.set('fav', temp);
     }
 
-    $scope.favorites = $localstorage.get('fav');
-    if (typeof($scope.favorites) != "undefined") {
-      $scope.quotes = Quotes.getListByIds($scope.favorites);
-    }
+    //$scope.favorites = $localstorage.get('fav');
+    //if (typeof($scope.favorites) != "undefined") {
+    //  $scope.quotes = Quotes.getListByIds($scope.favorites);
+    //}
 
     $state.go('tab.favorite', $scope, {reload: true});
     //$state.go($state.current, {}, {reload: true});
