@@ -3,21 +3,21 @@
     <div class="quotesView" on-swipe-left="showPrev()" on-swipe-right="showNext()">
       <div class="row">
         <div class="col">
-          <img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
+          <img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 70px; height: 70px;" href="#/tab/{{prevQ}}">
         </div>
         <div class="col headingText" style="margin: auto; width: 100%;padding: 10px;">
           {{categoryLabel}}
         </div>
         <div class="col">
-          <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px; position: absolute; right: 0px;" href="#/tab/{{nextQ}}">
+          <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 70px; height: 70px; position: absolute; right: 0px;" href="#/tab/{{nextQ}}">
         </div>
       </div>
-      <div style="margin-top: 10px; margin-right: 10px; margin-left: 10px;">
+      <div style="margin: 0px 20px 0px;">
         <div class="col-100 myQuote">
           {{quote.quote}}
         </div>
         <br /><br />
-        <div class="col-100 col-offset-50 author">
+        <div class="col-100 author">
           - {{quote.author}} <br>
           <!-- <img ng-src="{{quote.image}}" style="width: 64px; height: 64px"> -->
         </div>
@@ -25,22 +25,22 @@
       <div class="fixed-below">
         <div class="row">
           <div class="col">
-            <img src="img/iPhone6plus-add-to-fav.png" ng-click="saveFav({{quote.id}})"  style="width: 52px; height: 52px;">
+            <img src="img/iPhone6plus-add-to-fav.png" ng-click="saveFav({{quote.id}})"  style="width: 56px; height: 52px;">
           </div>
           <div class="col">
-            <img src="img/facebook.png" ng-click="postFacebook()" style="width: 52px; height: 52px;">
+            <img src="img/facebook.png" ng-click="postFacebook()" style="width: 56px; height: 52px;">
           </div>
           <div class="col">
-            <img src="img/twitter.png" ng-click="postTwitter()"  style="width: 52px; height: 52px;">
+            <img src="img/twitter.png" ng-click="postTwitter()"  style="width: 56px; height: 52px;">
           </div>
           <div class="col">
-            <img src="img/mail.png" ng-click="postEmail()"  style="width: 52px; height: 52px;">
+            <img src="img/mail.png" ng-click="postEmail()"  style="width: 56px; height: 52px;">
           </div>
           <div class="col">
-            <img src="img/message.png" ng-click="postText()"  style="width: 52px; height: 52px;">
+            <img src="img/message.png" ng-click="postText()"  style="width: 56px; height: 52px;">
           </div>
           <div class="col">
-            <img src="img/more.png" ng-click="openShare()"  style="width: 52px; height: 52px;">
+            <img src="img/more.png" ng-click="openShare()"  style="width: 56px; height: 52px;">
           </div>
         </div>
       </div>
