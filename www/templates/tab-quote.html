@@ -12,16 +12,17 @@
           <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 70px; height: 70px; position: absolute; right: 0px;" href="#/tab/{{nextQ}}">
         </div>
       </div>
-      <div style="margin: 0px 20px 0px;">
-        <div class="col-100 myQuote">
-          {{quote.quote}}
+      <ion-scroll direction="y" class="theroot" style="margin-bottom: 100px;">
+        <div style="margin: 0px 20px 0px;">
+          <div class="col-100 myQuote" overflow-scroll=”true”>
+            {{quote.quote}}
+          </div>
+          <br />
+          <div class="col-100 author">
+            - {{quote.author}} <br>
+          </div>
         </div>
-        <br /><br />
-        <div class="col-100 author">
-          - {{quote.author}} <br>
-          <!-- <img ng-src="{{quote.image}}" style="width: 64px; height: 64px"> -->
-        </div>
-      </div>
+      </ion-scroll>
       <div class="fixed-below">
         <div class="row">
           <div class="col">
