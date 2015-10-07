@@ -10,6 +10,7 @@ angular.module('starter.controllers', [])
   var catId = $stateParams.catId;
   var favId = $stateParams.favId;
   var allQuotes = Quotes.all();
+  $scope.categoryLabel = '';
 
   if (typeof(catId) != "undefined" && catId != "") {
     GAAnalytics.trackEvent('Quotes', 'Category', 'catId', catId);
@@ -18,6 +19,7 @@ angular.module('starter.controllers', [])
     for (var i = 0; i < allCat.length; i++) {
       if (allCat[i].id == catId) {
         quotesArray = allCat[i].quotes;
+        $scope.categoryLabel = allCat[i].name;
       }
     }
     if (typeof(id) == 'undefined' || id == '' || id == 0) {
@@ -42,6 +44,7 @@ angular.module('starter.controllers', [])
     tpath = 'fav';
     id = favId;
     $scope.favId = favId;
+    $scope.categoryLabel = "Favorites";
   }
 
   if (typeof(id) == 'undefined' || id == '' || id == 0) {
@@ -262,7 +265,7 @@ angular.module('starter.controllers', [])
 
   $scope.removeFav = function(quoteId) {
     //alert("In fav...." + quoteId);
-    GAAnalytics.trackEvent('Quotes', 'removeFavorite', 'id', id);
+    GAAnalytics.trackEvent('Quotes', 'removeFavorite', 'id', quoteId);
 
     var temp = $localstorage.get('fav');
     var favorites = new Array();
@@ -285,10 +288,10 @@ angular.module('starter.controllers', [])
       $localstorage.set('fav', temp);
     }
 
-    $scope.favorites = $localstorage.get('fav');
-    if (typeof($scope.favorites) != "undefined") {
-      $scope.quotes = Quotes.getListByIds($scope.favorites);
-    }
+    //$scope.favorites = $localstorage.get('fav');
+    //if (typeof($scope.favorites) != "undefined") {
+    //  $scope.quotes = Quotes.getListByIds($scope.favorites);
+    //}
 
     $state.go('tab.favorite', $scope, {reload: true});
     //$state.go($state.current, {}, {reload: true});

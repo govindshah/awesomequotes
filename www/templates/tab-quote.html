@@ -2,19 +2,19 @@
   <ion-content class="padding" scroll="false">
     <div class="quotesView" on-swipe-left="showPrev()" on-swipe-right="showNext()">
       <div class="row">
-        <div class="col">
+        <div class="col col-25">
           <img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 70px; height: 70px;" href="#/tab/{{prevQ}}">
         </div>
         <div class="col headingText" style="margin: auto; width: 100%;padding: 10px;">
           {{categoryLabel}}
         </div>
-        <div class="col">
+        <div class="col col-25">
           <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 70px; height: 70px; position: absolute; right: 0px;" href="#/tab/{{nextQ}}">
         </div>
       </div>
-      <ion-scroll direction="y" class="theroot" style="margin-bottom: 100px;">
-        <div style="margin: 0px 20px 0px;">
-          <div class="col-100 myQuote" overflow-scroll=”true”>
+      <ion-scroll direction="y" class="theroot">
+        <div style="margin: 0px 20px 0px; padding-bottom: 20px;">
+          <div class="col-100 myQuote">
             {{quote.quote}}
           </div>
           <br />
