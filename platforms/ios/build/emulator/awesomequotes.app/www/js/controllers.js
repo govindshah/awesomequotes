@@ -138,8 +138,8 @@ angular.module('starter.controllers', [])
 
     $scope.favorites = $localstorage.get('fav');
     $ionicPopup.alert({
-      title: 'Message',
-      template: 'Saved to Favorites'
+      title: 'Saved to Favorites',
+      template: ''
     });
     //alert("New Value...." + $scope.favorites);
   };

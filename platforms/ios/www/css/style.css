@@ -172,6 +172,11 @@ body
   height: 100% !important;
 }
 
+button.button-positive {
+  border-color: #400000 !important;
+  background-color: #400000 !important;
+  color: #fff;
+}
 
 
 
