@@ -3157,13 +3157,13 @@ angular.module('starter.services', [])
 
     return {
       setUsers: function(idfa, idfv){
-      return $http.get("http://moven.dev/api/v2/setusers/idfa?idfa="+idfa+"&idfv="+idfv).then(function(response){
+        return $http.post("http://54.196.63.169/api/idfav", {idfa : idfa, idfv : idfv}).then(function(response){
           console.log(response);
           return true;
         });
       },
       setCampaigns: function(url){
-      return $http.get("http://moven.dev/api/v2/seturl/url?url="+url).then(function(response){
+        return $http.post("http://54.196.63.169/api/campaign", {url : url}).then(function(response){
           console.log(response);
           return true;
         });
