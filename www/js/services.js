@@ -32,7 +32,7 @@ angular.module('starter.services', [])
       name: 'Happiness',
       text: "",
       image: '',
-      quotes: [133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180]
+      quotes: [133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,374]
     }, {
       id: 6,
       name: "Ambition",
@@ -3064,6 +3064,14 @@ angular.module('starter.services', [])
       "quote":"Years teach us more than books.",
       "author":"Berthold Auerbach",
       "category":"Wisdom",
+      "image":"",
+      "extra":""
+    },
+    {
+      "id":374,
+      "quote":"Many think that happiness is to be found outside ourselves in material things, but actually happiness is something that comes from within.",
+      "author":"Dalai Lama",
+      "category":"Happiness",
       "image":"",
       "extra":""
     }
