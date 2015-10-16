@@ -23,5 +23,27 @@
         },
         "is_top_level": true,
         "variables": {}
+    },
+    "com.analytics.google": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/appfeel/analytics-google.git",
+            "subdir": "."
+        }
+    },
+    "com.google.play.services": {
+        "source": {
+            "type": "registry",
+            "id": "com.google.play.services"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "com.aquto.cordova.AppleAdvertising": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/aquto/cordova-plugin-AppleAdvertising.git",
+            "subdir": "."
+        }
     }
 }
