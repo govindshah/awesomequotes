@@ -34,6 +34,13 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "file": "plugins/org.apache.cordova.splashscreen/www/splashscreen.js",
+        "id": "org.apache.cordova.splashscreen.SplashScreen",
+        "clobbers": [
+            "navigator.splashscreen"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -43,7 +50,8 @@ module.exports.metadata =
     "com.aquto.cordova.AppleAdvertising": "0.0.1",
     "com.analytics.google": "1.2.2",
     "cordova-plugin-customurlscheme": "4.0.0",
-    "cordova-plugin-x-socialsharing": "5.0.4"
+    "cordova-plugin-x-socialsharing": "5.0.4",
+    "org.apache.cordova.splashscreen": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

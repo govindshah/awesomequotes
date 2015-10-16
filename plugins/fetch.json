@@ -45,5 +45,13 @@
             "url": "https://github.com/aquto/cordova-plugin-AppleAdvertising.git",
             "subdir": "."
         }
+    },
+    "org.apache.cordova.splashscreen": {
+        "source": {
+            "type": "registry",
+            "id": "org.apache.cordova.splashscreen"
+        },
+        "is_top_level": true,
+        "variables": {}
     }
 }

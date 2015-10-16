@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		015D291580B6454EAA36FC07 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21C9A26E7B4FAEB21AD565 /* CoreData.framework */; };
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
@@ -49,6 +48,7 @@
 		EE9D97A969044EAB9AD0CEF4 /* UIWebViewExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 261A688523854B42972BB988 /* UIWebViewExtension.m */; };
 		F3644922ADF542ABB25F4BDF /* CDVGoogleAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = BCA25C651A79403380616307 /* CDVGoogleAnalytics.m */; };
 		F89BADC0E99F4EE281CD0605 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A772A5AE914CE1910CE812 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		F8DCBC9CEB8C4508BED36E2E /* CDVSplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 41A896CE7F644BEFB6539AA9 /* CDVSplashScreen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +136,8 @@
 		F6560D7B352D47FDA2507019 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAIEcommerceProductAction.h; path = com.analytics.google/GAIEcommerceProductAction.h; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = werdup/config.xml; sourceTree = "<group>"; };
 		F94C9BC7AEF54CED974CE75B /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GAI.h; path = com.analytics.google/GAI.h; sourceTree = "<group>"; };
+		41A896CE7F644BEFB6539AA9 /* CDVSplashScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVSplashScreen.m"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		C4B6DD1CC6434A9FBAE6F5A4 /* CDVSplashScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVSplashScreen.h"; path = "org.apache.cordova.splashscreen/CDVSplashScreen.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +272,8 @@
 				F526C257C0734DD3AC751318 /* GAITracker.h */,
 				B794893B08464F4CA5D7CE87 /* SocialSharing.m */,
 				B15C196DEBCE4A2D9512839F /* SocialSharing.h */,
+				41A896CE7F644BEFB6539AA9 /* CDVSplashScreen.m */,
+				C4B6DD1CC6434A9FBAE6F5A4 /* CDVSplashScreen.h */,
 			);
 			name = Plugins;
 			path = werdup/Plugins;
@@ -456,6 +460,7 @@
 				47C0807FDF6147B59D0BC76E /* AppleAdvertising.m in Sources */,
 				F3644922ADF542ABB25F4BDF /* CDVGoogleAnalytics.m in Sources */,
 				C497256F51164F318C4CC4B1 /* SocialSharing.m in Sources */,
+				F8DCBC9CEB8C4508BED36E2E /* CDVSplashScreen.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
