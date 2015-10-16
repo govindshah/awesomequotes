@@ -178,6 +178,21 @@ button.button-positive {
   color: #fff;
 }
 
+.platform-android .tabs-top > .tabs, .tabs.tabs-top {
+  top: 66px !important;
+}
 
+.platform-android .quotesView {
+  padding-top: 8px;
+}
 
+.platform-android .fixed-below {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+}
 
+.platform-android .list {
+  margin-top: 35px;
+}
