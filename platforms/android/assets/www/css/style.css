@@ -1,0 +1,198 @@
+/* Empty. Add your own CSS if you like */
+/* latin */
+@font-face {
+  font-family: 'Cookie';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Cookie-Regular'), url('../lib/ionic/fonts/5eiDWXYu_7xmow8ddgvSIOvvDin1pK8aKteLpeZ5c0A.woff2') format('woff2'),
+  url("../lib/ionic/fonts/Cookie-Regular.ttf") format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+/*
+.myQuote {
+  font: 400 40px/0.8 'Cookie', Helvetica, sans-serif;
+  color: #000;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.author {
+  font: 400 20px/0.8 'Cookie', Arial, serif;;
+  color: #000;
+  text-shadow: 4px 4px 3px rgba(0,0,0,0.1);
+  text-align: center;
+}*/
+
+@font-face
+{ font-family: 'missionpossible';
+  font-style: normal;
+  font-weight: 400;
+  src: local('missionpossible'), url('../lib/ionic/fonts/missionpossible.woff') format('woff'),
+  url("../lib/ionic/fonts/missionpossible.ttf") format('truetype');
+}
+body
+{ font-family: 'missionpossible', Arial, serif; font-weight: 400; }
+
+.bigText
+{
+  font: 400 40px/0.8 'missionpossible', Arial, serif;;
+  color: #000;
+}
+
+.headingText
+{
+  font: 400 30px/0.8 'missionpossible', Arial, serif;;
+  color: #978C7F;
+}
+
+.mediumCustomText
+{
+  font: 10px/0.8 'missionpossible', Arial, serif;;
+  color: #000;
+}
+
+.myQuote {
+  font: 400 40px/0.8 'missionpossible', Arial, serif;;
+  color: #5C3B19;
+  text-align: center;
+  line-height: 38px;
+  letter-spacing: 1px;
+}
+
+.author {
+  font: 400 30px/0.8 'missionpossible', Arial, serif;;
+  color: #5C3B19;
+  text-align: center;
+}
+
+.pane {
+  background: url("../img/iPhone6plus-backdrop.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.quotesView {
+  background: url("../img/iPhone6plus-backdrop.png") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+}
+
+.nav-bar-block, .bar {
+  background: url("../img/iPhone6plus-navbar.png") !important;
+  height: 70px;
+}
+
+.tabs {
+  background: url("../img/iPhone6plus-navbar.png") !important;
+  height: 70px;
+}
+
+.tabs .tab-item .icon.quote-on {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("../img/iPhone6plus-quote-on.png");
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.quote-off {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("../img/iPhone6plus-quote-off.png");
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.category-on {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("../img/iPhone6plus-category-on.png");
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.category-off {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("../img/iPhone6plus-category-off.png");
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.favorite-on {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("../img/iPhone6plus-favorite-on.png");
+  background-size:contain;
+}
+
+.tabs .tab-item .icon.favorite-off {
+  background-repeat: no-repeat;
+  background-position: 50%;
+  height: 100%;
+  background-image: url("../img/iPhone6plus-favorite-off.png");
+  background-size:contain;
+}
+
+.fixed-below {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 62px;
+}
+
+.scroll-content {
+  position: relative;
+}
+
+.item .item-content .item-complex{
+  border-color: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+  color: white;
+}
+
+.item-remove-animate.item-icon-right {
+  border-color: rgba(0, 0, 0, 0) !important;
+  background-color: rgba(0, 0, 0, 0) !important;
+}
+
+.item .item-content {
+  background-color: transparent !important;
+}
+
+.item h2 {
+  font-size: 27px !important;
+}
+
+.title {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+button.button-positive {
+  border-color: #400000 !important;
+  background-color: #400000 !important;
+  color: #fff;
+}
+
+.platform-android .tabs-top > .tabs, .tabs.tabs-top {
+  top: 66px !important;
+}
+
+.platform-android .quotesView {
+  padding-top: 8px;
+}
+
+.platform-android .fixed-below {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: -16px;
+}
+
+.platform-android .list {
+  margin-top: 35px;
+}
