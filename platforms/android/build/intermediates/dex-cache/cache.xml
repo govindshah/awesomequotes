@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/exploded-aar/android.com.google.play.services/google-play-services_lib/unspecified/debug/libs/google-play-services.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0cc4583d020880e34274a4c7b8ac772d96ecdac7">
+        <dex dex="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/debug/google-play-services-d8a556437e98df3ae8bea7aec2961f5c562aad75.jar" />
+    </item>
+    <item
+        jar="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/exploded-aar/android.com.google.play.services/google-play-services_lib/unspecified/release/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="03b7e165d8c388217de5365ffaed82c7863e9f9c">
+        <dex dex="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/release/classes-d99837304d832849fb0bd006838f6d96cdaf0e7b.jar" />
+    </item>
+    <item
+        jar="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/exploded-aar/android.com.google.play.services/google-play-services_lib/unspecified/debug/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="43659f9800345be0031343aa075ff734c7b38dc5">
+        <dex dex="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/debug/classes-34a0e25a18575972661effa4fe8eae9d5eb57a26.jar" />
+    </item>
+    <item
+        jar="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/release/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="e0e879efeff56ab63d72d70d96a34fd7dc01930c">
+        <dex dex="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/release/classes-137b9f6063c9177dfe755a19af6e0acaa0dc78e1.jar" />
+    </item>
+    <item
+        jar="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/exploded-aar/android.com.google.play.services/google-play-services_lib/unspecified/release/libs/google-play-services.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="0cc4583d020880e34274a4c7b8ac772d96ecdac7">
+        <dex dex="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/release/google-play-services-83e30e16eb56e92d07cdc586428b9a0c52a4546a.jar" />
+    </item>
+    <item
+        jar="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="bd1c135a284612c6921a9af92efa9ef33ca5b6e9">
+        <dex dex="/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/debug/classes-1779781f98bce05deb17b1c3f61b0ba153763771.jar" />
+    </item>
+
+</items>

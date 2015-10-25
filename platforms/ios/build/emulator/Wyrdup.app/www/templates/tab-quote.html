@@ -1,0 +1,34 @@
+<ion-view view-title="<img src='img/iPhone6plus-logo.png' width='50%' height='50%'>" data-ng-init="init()">
+  <ion-content class="padding" scroll="false">
+    <div class="quotesView" on-swipe-left="showPrev()" on-swipe-right="showNext()">
+      <div style="margin-top: 20%">
+        <div class="col-100 myQuote">
+          {{quote.quote}}
+        </div>
+        <br /><br />
+        <div class="col-100 col-offset-50 author">
+          - {{quote.author}} <br> <!-- {{quote.id}}
+          <!-- <img ng-src="{{quote.image}}" style="width: 64px; height: 64px"> -->
+        </div>
+      </div>
+      <div class="fixed-below">
+        <div class="row">
+          <div class="col">
+            <img src="img/iPhone6plus-arrow-left.png" ng-click="showPrev({{prevQ}})" style="width: 100px; height: 52px;" href="#/tab/{{prevQ}}">
+          </div>
+          <div class="col">
+            <img src="img/star-brown.jpg" ng-click="saveFav({{quote.id}})"  style="width: 26px; height: 26px;">
+            <img src="img/facebook.png" ng-click="postFacebook()" style="width: 26px; height: 26px;">
+            <img src="img/twitter.png" ng-click="postTwitter()"  style="width: 26px; height: 26px;">
+            <img src="img/mail.png" ng-click="postEmail()"  style="width: 26px; height: 26px;">
+            <img src="img/message.png" ng-click="postText()"  style="width: 26px; height: 26px;">
+            <img src="img/share.png" ng-click="openShare()"  style="width: 26px; height: 26px;">
+          </div>
+          <div class="col">
+           <img src="img/iPhone6plus-arrow-right.png" ng-click="showNext({{nextQ}})" style="width: 100px; height: 52px; position: absolute; right: 0px;" href="#/tab/{{nextQ}}">
+          </div>
+        </div>
+      </div>
+   </div>
+ </ion-content>
+</ion-view>

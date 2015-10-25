@@ -1,0 +1,4 @@
+/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/classes/release
+/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/release/classes-d99837304d832849fb0bd006838f6d96cdaf0e7b.jar
+/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/release/classes-137b9f6063c9177dfe755a19af6e0acaa0dc78e1.jar
+/Users/govind/workspace/awesomequotes/platforms/android/build/intermediates/pre-dexed/release/google-play-services-83e30e16eb56e92d07cdc586428b9a0c52a4546a.jar
