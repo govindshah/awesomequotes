@@ -206,6 +206,12 @@ static NSString *stripFragment(NSString* url)
 
 - (BOOL)webView:(UIWebView*)webView shouldStartLoadWithRequest:(NSURLRequest*)request navigationType:(UIWebViewNavigationType)navigationType
 {
+    //if([[NSString stringWithFormat:@"%@",request.URL] rangeOfString:@"file"].location== NSNotFound && [[NSString stringWithFormat:@"%@",request.URL] rangeOfString:@"gap://"].location == NSNotFound)
+  if([[NSString stringWithFormat:@"%@",request.URL] rangeOfString:@"54.196.63.169"].location != NSNotFound)
+    {
+    [[UIApplication sharedApplication] openURL:[request URL]];
+    return NO;
+    }
     BOOL shouldLoad = YES;
 
     if ([_delegate respondsToSelector:@selector(webView:shouldStartLoadWithRequest:navigationType:)]) {
