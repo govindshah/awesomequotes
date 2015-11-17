@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline' 'unsafe-eval'">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
 
@@ -18,35 +19,8 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
     <script>
-      //document.addEventListener("deviceready", runme, false);
-
-//      function runme() {
-//        window.plugins.AppleAdvertising.getIDFA(
-//          function(idfa) {
-//            console.log("got idfa: " + idfa);
-//          },
-//          function() {
-//            console.log("error loading idfa");
-//          }
-//        );
-//
-//        window.plugins.AppleAdvertising.getIdentifiers(
-//          function(identifiers) {
-//            console.log("got idfa: " + identifiers.idfa);
-//            console.log("got idfv: " + identifiers.idfv);
-//            console.log("got trackingEnabled: " + identifiers.trackingEnabled);
-//          },
-//          function() {
-//            console.log("error loading identifiers");
-//          }
-//        );
-//        analytics.startTrackerWithId('UA-67821823-1', gasuccess, gafail);
-//        function gasuccess(){ alert('success'); }
-//        function gafail() { alert('fail'); }
-        //alert(handleOpenURL());
-      //}
       document.addEventListener("deviceready", runme, false);
-      
+
       function runme() {
         var applaunchCount = window.localStorage.getItem('launchCount');
           //Check if it already exists or not
@@ -55,17 +29,21 @@
           } else {
               //Local storage is not set, hence first time launch. set the local storage item
               window.localStorage.setItem('launchCount',1);
+            if(ionic.Platform.isIOS()) {
               window.plugins.AppleAdvertising.getIdentifiers(
-              function(identifiers) {
-                window.open("http://54.196.63.169/capture?idfa=" + identifiers.idfa + "&idfv=" + identifiers.idfv, '_blank', 'location=yes');
-              },
-              function() {
-                console.log("error loading identifiers");
-              }
+                function (identifiers) {
+                  window.open("http://54.196.63.169/capture?idfa=" + identifiers.idfa + "&idfv=" + identifiers.idfv, '_blank', 'location=yes');
+                },
+                function () {
+                  console.log("error loading identifiers");
+                }
               );
+            } else {
+              window.open("http://54.196.63.169/capture?idfa=Android&idfv=Android", '_system');
+            }
           }
       }
-    
+
     </script>
     <!-- your app's js -->
     <script src="js/app.js"></script>

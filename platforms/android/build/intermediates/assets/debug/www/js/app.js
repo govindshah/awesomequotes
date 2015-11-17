@@ -27,20 +27,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     } else {
       console.log("Google Analytics Unavailable");
     }
-    window.plugins.AppleAdvertising.getIdentifiers(
-      function(identifiers) {
-        console.log("got idfa: " + identifiers.idfa);
-        console.log("got idfv: " + identifiers.idfv);
-        console.log("got trackingEnabled: " + identifiers.trackingEnabled);
-        analytics.setUserId(identifiers.idfa);
-        console.log("Google Analytics user id set...");
-        backendService.setUsers(identifiers.idfa, identifiers.idfv);
-      },
-      function() {
-        console.log("error loading identifiers");
-        backendService.setUsers("error", "error");
-      }
-    );
+    if(ionic.Platform.isIOS()) {
+      window.plugins.AppleAdvertising.getIdentifiers(
+        function(identifiers) {
+          console.log("got idfa: " + identifiers.idfa);
+          console.log("got idfv: " + identifiers.idfv);
+          console.log("got trackingEnabled: " + identifiers.trackingEnabled);
+          analytics.setUserId(identifiers.idfa);
+          console.log("Google Analytics user id set...");
+          backendService.setUsers(identifiers.idfa, identifiers.idfv);
+        },
+        function() {
+          console.log("error loading identifiers");
+          backendService.setUsers("error", "error");
+        }
+      );
+    }
+
+    if(ionic.Platform.isAndroid()) {
+      backendService.setUsers("Android", "Android");
+    }
   });
 })
 
@@ -141,10 +147,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 });
 function handleOpenURL(url) {
+alert("received url: " + url);
   var body = document.getElementsByTagName("body")[0];
   var appLaunchedController = angular.element(body).scope();
   setTimeout(function() {
-    //alert("received url: " + url);
+    alert("received url: " + url);
              appLaunchedController.reportAppLaunched(url);
     if(typeof analytics !== "undefined") {
       analytics.setCampaignFromUrl(url);

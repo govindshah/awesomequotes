@@ -95,38 +95,38 @@ ADDED from AndroidManifest.xml:17:17
 	android:name
 		ADDED from AndroidManifest.xml:17:27
 meta-data#com.google.android.gms.version
-ADDED from AndroidManifest.xml:20:9
+ADDED from AndroidManifest.xml:26:9
 MERGED from android.com.google.play.services:google-play-services_lib:unspecified:debug:23:9
 	android:value
-		ADDED from AndroidManifest.xml:20:66
+		ADDED from AndroidManifest.xml:26:66
 	android:name
-		ADDED from AndroidManifest.xml:20:20
+		ADDED from AndroidManifest.xml:26:20
 service#com.google.analytics.tracking.android.CampaignTrackingService
-ADDED from AndroidManifest.xml:21:9
+ADDED from AndroidManifest.xml:27:9
 	android:name
-		ADDED from AndroidManifest.xml:21:18
+		ADDED from AndroidManifest.xml:27:18
 receiver#com.google.analytics.tracking.android.CampaignTrackingReceiver
-ADDED from AndroidManifest.xml:22:9
+ADDED from AndroidManifest.xml:28:9
 	android:exported
-		ADDED from AndroidManifest.xml:22:19
+		ADDED from AndroidManifest.xml:28:19
 	android:name
-		ADDED from AndroidManifest.xml:22:43
+		ADDED from AndroidManifest.xml:28:43
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from AndroidManifest.xml:23:13
+ADDED from AndroidManifest.xml:29:13
 action#com.android.vending.INSTALL_REFERRER
-ADDED from AndroidManifest.xml:24:17
+ADDED from AndroidManifest.xml:30:17
 	android:name
-		ADDED from AndroidManifest.xml:24:25
+		ADDED from AndroidManifest.xml:30:25
 uses-sdk
-ADDED from AndroidManifest.xml:28:5
+ADDED from AndroidManifest.xml:34:5
 MERGED from android:CordovaLib:unspecified:debug:25:5
 MERGED from android.com.google.play.services:google-play-services_lib:unspecified:debug:20:5
 MERGED from android:CordovaLib:unspecified:debug:25:5
 	android:targetSdkVersion
-		ADDED from AndroidManifest.xml:28:42
+		ADDED from AndroidManifest.xml:34:42
 	android:minSdkVersion
-		ADDED from AndroidManifest.xml:28:15
+		ADDED from AndroidManifest.xml:34:15
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from AndroidManifest.xml:29:5
+ADDED from AndroidManifest.xml:35:5
 	android:name
-		ADDED from AndroidManifest.xml:29:22
+		ADDED from AndroidManifest.xml:35:22

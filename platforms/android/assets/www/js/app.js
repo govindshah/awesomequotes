@@ -27,20 +27,26 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     } else {
       console.log("Google Analytics Unavailable");
     }
-    window.plugins.AppleAdvertising.getIdentifiers(
-      function(identifiers) {
-        console.log("got idfa: " + identifiers.idfa);
-        console.log("got idfv: " + identifiers.idfv);
-        console.log("got trackingEnabled: " + identifiers.trackingEnabled);
-        analytics.setUserId(identifiers.idfa);
-        console.log("Google Analytics user id set...");
-        backendService.setUsers(identifiers.idfa, identifiers.idfv);
-      },
-      function() {
-        console.log("error loading identifiers");
-        backendService.setUsers("error", "error");
-      }
-    );
+    if(ionic.Platform.isIOS()) {
+      window.plugins.AppleAdvertising.getIdentifiers(
+        function(identifiers) {
+          console.log("got idfa: " + identifiers.idfa);
+          console.log("got idfv: " + identifiers.idfv);
+          console.log("got trackingEnabled: " + identifiers.trackingEnabled);
+          analytics.setUserId(identifiers.idfa);
+          console.log("Google Analytics user id set...");
+          backendService.setUsers(identifiers.idfa, identifiers.idfv);
+        },
+        function() {
+          console.log("error loading identifiers");
+          backendService.setUsers("error", "error");
+        }
+      );
+    }
+
+    if(ionic.Platform.isAndroid()) {
+      backendService.setUsers("Android", "Android");
+    }
   });
 })
 
