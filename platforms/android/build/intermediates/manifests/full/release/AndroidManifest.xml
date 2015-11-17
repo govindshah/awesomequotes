@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ushotdeals.werdup"
     android:hardwareAccelerated="true"
-    android:versionCode="18"
-    android:versionName="0.0.1" >
+    android:versionCode="28"
+    android:versionName="0.0.2" >
 
     <uses-sdk
         android:minSdkVersion="16"
@@ -38,6 +38,14 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="com.ushotdeals.werdup" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
             </intent-filter>
             <intent-filter>
                 <data android:scheme="awesomequotes" />

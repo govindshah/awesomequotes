@@ -151,7 +151,7 @@ function handleOpenURL(url) {
   var appLaunchedController = angular.element(body).scope();
   setTimeout(function() {
     //alert("received url: " + url);
-             appLaunchedController.reportAppLaunched(url);
+    appLaunchedController.reportAppLaunched(url);
     if(typeof analytics !== "undefined") {
       analytics.setCampaignFromUrl(url);
     }

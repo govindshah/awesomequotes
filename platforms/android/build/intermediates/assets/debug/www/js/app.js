@@ -147,12 +147,11 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
 });
 function handleOpenURL(url) {
-alert("received url: " + url);
   var body = document.getElementsByTagName("body")[0];
   var appLaunchedController = angular.element(body).scope();
   setTimeout(function() {
-    alert("received url: " + url);
-             appLaunchedController.reportAppLaunched(url);
+    //alert("received url: " + url);
+    appLaunchedController.reportAppLaunched(url);
     if(typeof analytics !== "undefined") {
       analytics.setCampaignFromUrl(url);
     }
